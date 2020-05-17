@@ -5,10 +5,19 @@ namespace PublicationOrganizer.Core
 {
     public class ApplicationViewModel : BaseViewModel
     {
+        #region Constructor 
+
+        /// <summary>
+        /// Default constructor
+        /// </summary>
         public ApplicationViewModel()
         {
             PerformApplicationMaintenanceFunctions(); 
         }
+
+        #endregion
+
+        #region Properties 
 
         /// <summary>
         /// The current page that the user has navigated to
@@ -20,6 +29,11 @@ namespace PublicationOrganizer.Core
         /// </summary>
         public StandardDialogViewModel StandardMessageDialogViewModel { get; set; }
 
+        #endregion
+
+
+        #region Private Methods 
+
         /// <summary>
         /// Method that triggers database maintenance functions on startup
         /// </summary>
@@ -28,6 +42,10 @@ namespace PublicationOrganizer.Core
             Builder bldr = new Builder();
             bldr.PerformDatabaseBuildout();
         }
+
+        #endregion
+
+        #region Public Methods 
 
         /// <summary>
         /// Method that begins page navigation
@@ -38,9 +56,16 @@ namespace PublicationOrganizer.Core
             CurrentPage = page; 
         }
 
+        /// <summary>
+        /// Method that creates a standard message dialog
+        /// </summary>
+        /// <param name="header">Title of the dialog to be shown</param>
+        /// <param name="message">Message contained within the body of the dialog box</param>
         public void CreateMessageDialog(string header, string message)
         {
             StandardMessageDialogViewModel = new StandardDialogViewModel(header, message);
         }
+
+        #endregion 
     }
 }

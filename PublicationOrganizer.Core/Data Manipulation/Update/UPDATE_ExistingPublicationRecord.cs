@@ -52,7 +52,10 @@ namespace PublicationOrganizer.Core
             }
         }
 
-
+        /// <summary>
+        /// Command text for updating a publication
+        /// </summary>
+        /// <returns></returns>
         private string EditPublicationCommandText()
         {
             return @"UPDATE Publications

@@ -38,6 +38,10 @@ namespace PublicationOrganizer.Core
             }
         }
 
+        /// <summary>
+        /// Command text for deleting a publication from the database 
+        /// </summary>
+        /// <returns></returns>
         private string PerformDeleteCommandText()
         {
             return @"DELETE FROM Publications WHERE PublicationId = @ID;";

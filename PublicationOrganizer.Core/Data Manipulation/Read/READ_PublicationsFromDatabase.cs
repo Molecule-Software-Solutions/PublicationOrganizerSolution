@@ -6,6 +6,10 @@ namespace PublicationOrganizer.Core
 {
     internal class READ_PublicationsFromDatabase
     {
+        /// <summary>
+        /// Returns a full collection of all publications stored in the database 
+        /// </summary>
+        /// <returns></returns>
         public ObservableCollection<Publication> GetCollectionOfPublications()
         {
             using (SqliteConnection conn = new SqliteConnection(DBConnection.GetConnectionString()))
@@ -49,6 +53,10 @@ namespace PublicationOrganizer.Core
             }
         }
 
+        /// <summary>
+        /// Comamnd text for retrieving the publications from the database 
+        /// </summary>
+        /// <returns></returns>
         private string GetCollectionOfPublicationsCommandText()
         {
             return @"SELECT * FROM Publications;";

@@ -1,12 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Text;
 
 namespace PublicationOrganizer.Core
 {
     public class MainPageViewModel : BaseViewModel
     {
+        #region Constructor 
+
         /// <summary>
         /// Default Constructor
         /// </summary>
@@ -15,6 +15,10 @@ namespace PublicationOrganizer.Core
             // Performs the initial draw down from the database 
             BuildPublicationList(); 
         }
+
+        #endregion
+
+        #region Properties 
 
         /// <summary>
         /// Publicly accessible list of <see cref="Publication"/> that will be used by the UI to create a list. 
@@ -46,6 +50,9 @@ namespace PublicationOrganizer.Core
         /// </summary>
         public string SearchString { get; set; }
 
+        #endregion
+
+        #region Private Methods 
 
         /// <summary>
         /// Method that populates the <see cref="PublicationList"/> properly with an <see cref="ObservableCollection{Publication}"/> drawn down from the database
@@ -61,6 +68,42 @@ namespace PublicationOrganizer.Core
                 StaticViewmodelController.ApplicationViewModel.CreateMessageDialog("An error has occurred", ex.Message); 
             }
         }
+
+        /// <summary>
+        /// Method that hides the edit publication panel by changing the visibility value within this viewmodel
+        /// </summary>
+        private void HideEditPanel()
+        {
+            EditPublicationPanelVisibility = false;
+        }
+
+        /// <summary>
+        /// Method that shows the edit publication panel by changing the visibility value within this viewmodel
+        /// </summary>
+        private void ShowEditPanel()
+        {
+            EditPublicationPanelVisibility = true;
+        }
+
+        /// <summary>
+        /// Method that hides the Add publication panel by changing the visibility value within this viewmodel
+        /// </summary>
+        private void HideAddPanel()
+        {
+            AddNewPublicationPanelVisibility = false;
+        }
+
+        /// <summary>
+        /// Method that shows the add publication panel by changing the visibility value within this viewmodel
+        /// </summary>
+        private void ShowAddPanel()
+        {
+            AddNewPublicationPanelVisibility = true;
+        }
+
+        #endregion
+
+        #region Commands  
 
         /// <summary>
         /// Command which shows the AddNewPublication panel upon execution
@@ -156,32 +199,23 @@ namespace PublicationOrganizer.Core
             }
         }, SelectedPublication != null);
 
+        /// <summary>
+        /// Command that performs a Title based search of the publications in the database 
+        /// </summary>
         public RelayCommand PerformTitleSearch_COMMAND => new RelayCommand(() =>
         {
             PublicationList = new READ_PublicationsByTitle().GetCollectionOfPublications(SearchString); 
         }, !string.IsNullOrEmpty(SearchString));
 
+        /// <summary>
+        /// Resets search so that all publications will be listed. 
+        /// </summary>
         public RelayCommand ResetSearch_COMMAND => new RelayCommand(() =>
         {
             PublicationList = new READ_PublicationsFromDatabase().GetCollectionOfPublications();
             SearchString = string.Empty; 
         });
 
-        private void HideEditPanel()
-        {
-            EditPublicationPanelVisibility = false; 
-        }
-        private void ShowEditPanel()
-        {
-            EditPublicationPanelVisibility = true; 
-        }
-        private void HideAddPanel()
-        {
-            AddNewPublicationPanelVisibility = false; 
-        }
-        private void ShowAddPanel() 
-        {
-            AddNewPublicationPanelVisibility = true; 
-        }
+        #endregion 
     }
 }

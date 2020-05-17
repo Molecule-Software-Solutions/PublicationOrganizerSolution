@@ -3,6 +3,12 @@ using System;
 
 namespace PublicationOrganizer.Core
 {
+    /// <summary>
+    /// Extensions that provide a safe return method for <see cref="SqliteDataReader"/> calls
+    /// NOTE: These method will return default values if the reader recovers garbage data or null columns.
+    /// The developer will want to adjust his/her return calls to provide a value that will not be mistaken
+    /// for good data. Because of the simplicity of this application, generic returns are all that is required. 
+    /// </summary>
     public static class SQLiteDataReaderExtensions
     {
         /// <summary>

@@ -17,6 +17,7 @@ namespace PublicationOrganizer.Core
             {
                 using (SqliteCommand comm = new SqliteCommand(SelectByTitleCommandText(), conn))
                 {
+                    // Note the addition of wildcard % in this parameter
                     comm.Parameters.AddWithValue("@Search", $"%{searchString}%");
                     ObservableCollection<Publication> returnList = new ObservableCollection<Publication>();
                     comm.Connection.Open();
@@ -55,6 +56,12 @@ namespace PublicationOrganizer.Core
         }
 
 
+        /// <summary>
+        /// Command text for selecting a publication by title
+        /// NOTE: Wildcard is passed by surrounding the @Search value with %
+        /// See the assignment of parameters in the <see cref="GetCollectionOfPublications(string)"/> method
+        /// </summary>
+        /// <returns></returns>
         private string SelectByTitleCommandText()
         {
             return @"SELECT * FROM Publications WHERE Title LIKE @Search;";

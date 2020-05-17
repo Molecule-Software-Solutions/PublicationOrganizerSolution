@@ -52,7 +52,10 @@ namespace PublicationOrganizer.Core
             }
         }
 
-
+        /// <summary>
+        /// Comamnd text for Adding a publication to the database 
+        /// </summary>
+        /// <returns></returns>
         private string AddPublicationCommandText()
         {
             return @"INSERT INTO Publications (
