@@ -4,6 +4,11 @@
              xmlns:local="clr-namespace:PublicationOrganizerUI"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/CustomControlsLibrary.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+            <SolidColorBrush x:Key="BorderBackgroundBrush" Color="#403f3e"/>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>

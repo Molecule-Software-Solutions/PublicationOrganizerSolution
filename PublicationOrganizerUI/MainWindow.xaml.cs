@@ -47,6 +47,16 @@ namespace PublicationOrganizerUI
             {
                 PageContentFrame.Content = ViewModel.CurrentPage.GetApplicationPage(); 
             }
+            if(e.PropertyName == nameof(ViewModel.StandardMessageDialogViewModel))
+            {
+                DialogContentFrame.Content = new StandardMessageDialog(ViewModel.StandardMessageDialogViewModel);
+                ViewModel.StandardMessageDialogViewModel.DialogClosed += StandardMessageDialogViewModel_DialogClosed;
+            }
+        }
+
+        private void StandardMessageDialogViewModel_DialogClosed(object sender, EventArgs e)
+        {
+            DialogContentFrame.Content = null; 
         }
     }
 }

@@ -1,5 +1,4 @@
-﻿using PublicationOrganizer.Core;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -15,15 +14,12 @@ using System.Windows.Shapes;
 namespace PublicationOrganizerUI
 {
     /// <summary>
-    /// Interaction logic for MainPage.xaml
+    /// Interaction logic for EditPublicationUserControl.xaml
     /// </summary>
-    public partial class MainPage : Page
+    public partial class EditPublicationUserControl : UserControl
     {
-        private MainPageViewModel ViewModel = new MainPageViewModel(); 
-
-        public MainPage()
+        public EditPublicationUserControl()
         {
-            DataContext = ViewModel; 
             InitializeComponent();
         }
     }

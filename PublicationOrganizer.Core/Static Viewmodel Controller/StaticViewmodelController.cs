@@ -5,6 +5,6 @@
     /// </summary>
     public static class StaticViewmodelController
     {
-        public static ApplicationViewModel ApplicationViewModel { get; set; } = new ApplicationViewModel(); 
+        public static ApplicationViewModel ApplicationViewModel { get; set; } = new ApplicationViewModel();
     }
 }

@@ -6,8 +6,11 @@
         xmlns:local="clr-namespace:PublicationOrganizerUI"
         mc:Ignorable="d"
         Background="DimGray"
+        WindowStartupLocation="CenterScreen"
         Title="Publication Organizer" Height="600" Width="800">
     <Grid>
-        <Frame x:Name="PageContentFrame"/>
+        <Frame Panel.ZIndex="0" x:Name="PageContentFrame" NavigationUIVisibility="Hidden"/>
+        <Frame Panel.ZIndex="1" x:Name="DialogContentFrame" NavigationUIVisibility="Hidden"/>
+        <Frame Panel.ZIndex="2" x:Name="ContentOverlayFrame" NavigationUIVisibility="Hidden"/>
     </Grid>
 </Window>

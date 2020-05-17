@@ -49,5 +49,20 @@ namespace PublicationOrganizer.Core
             }
             else return 0; 
         }
+
+        /// <summary>
+        /// returns a safe <see cref="bool"/> from an <see cref="SqliteDataReader"/>
+        /// </summary>
+        /// <param name="reader"></param>
+        /// <param name="columnName"></param>
+        /// <returns></returns>
+        public static bool GetSafeBool(this SqliteDataReader reader, string columnName)
+        {
+            if (reader.GetType() != typeof(DBNull) && !string.IsNullOrEmpty(columnName))
+            {
+                return Convert.ToBoolean(reader[columnName]);
+            }
+            else return false; 
+        }
     }
 }
