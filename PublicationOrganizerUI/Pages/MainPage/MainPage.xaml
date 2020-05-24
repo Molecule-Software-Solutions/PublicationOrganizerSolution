@@ -77,12 +77,36 @@
             <Border.Effect>
                 <DropShadowEffect/> 
             </Border.Effect>
-            <StackPanel Orientation="Horizontal" Height="40">
-                <TextBlock Margin="5 0 0 0" Text="Search Title" FontSize="16" Foreground="White" FontWeight="DemiBold" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-                <TextBox Margin="10 5 0 5" Background="DimGray" Width="200" VerticalAlignment="Center" FontSize="16" FontWeight="DemiBold" Foreground="White" Text="{Binding SearchString, UpdateSourceTrigger=PropertyChanged}"/>
-                <Button Margin="10 0 0 0" Content="Search" Width="150" Height="30" Background="Black" Foreground="Cyan" BorderBrush="Cyan" Command="{Binding PerformTitleSearch_COMMAND, UpdateSourceTrigger=PropertyChanged}"/>
-                <Button Margin="10 0 0 0" Content="Reset" Width="150" Height="30" Background="Black" Foreground="Purple" BorderBrush="Purple" Command="{Binding ResetSearch_COMMAND, UpdateSourceTrigger=PropertyChanged}"/>
-            </StackPanel>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Border Grid.Row="0" Margin="5" BorderBrush="Black" BorderThickness="3" CornerRadius="0 0 10 10" Background="{StaticResource BorderBackgroundBrush}">
+                    <Border.Effect>
+                        <DropShadowEffect/> 
+                    </Border.Effect>
+                    
+                    <!--Search Area Title-->
+                    <TextBlock Text="Search Publications" FontWeight="DemiBold" Foreground="White" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+                </Border>
+                    
+                <!--Search Area Functions-->
+                <StackPanel Grid.Row="1" Orientation="Horizontal" Height="40" HorizontalAlignment="Center">
+                    <ComboBox Width="150" Margin="5 0 0 0" Text="Select Search Item" FontSize="16" Foreground="Black" FontWeight="DemiBold" HorizontalAlignment="Left" VerticalAlignment="Center" SelectedIndex="{Binding SelectedSearchIndex, UpdateSourceTrigger=PropertyChanged}">
+                        <ComboBoxItem>Title</ComboBoxItem>
+                        <ComboBoxItem>Group</ComboBoxItem>
+                        <ComboBoxItem>Location</ComboBoxItem>
+                        <ComboBoxItem>Publication Date</ComboBoxItem>
+                        <ComboBoxItem>Summary</ComboBoxItem>
+                    </ComboBox>
+                    <TextBox x:Name="SearchTextBox" Margin="10 5 0 5" Background="DimGray" Width="200" VerticalAlignment="Center" FontSize="16" FontWeight="DemiBold" Foreground="White" Text="{Binding SearchString, UpdateSourceTrigger=PropertyChanged}" KeyDown="SearchTextBox_KeyDown"/>
+                    <Button Margin="10 0 0 0" Content="Search" Width="150" Height="30" Background="Black" Foreground="White" BorderBrush="Cyan" Command="{Binding PerformSearch_COMMAND, UpdateSourceTrigger=PropertyChanged}"/>
+                    <Button Margin="10 0 0 0" Content="Reset" Width="150" Height="30" Background="Black" Foreground="White" BorderBrush="Purple" Command="{Binding ResetSearch_COMMAND, UpdateSourceTrigger=PropertyChanged}"/>
+                </StackPanel>
+            </Grid>
+
         </Border>
         
     </Grid>

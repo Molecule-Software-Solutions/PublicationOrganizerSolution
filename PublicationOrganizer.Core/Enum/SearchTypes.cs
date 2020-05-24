@@ -5,7 +5,7 @@
         Title,
         Group,
         Location,
+        Date,
         Summary,
-        Date
     }
 }
