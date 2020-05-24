@@ -13,7 +13,7 @@ namespace PublicationOrganizer.Core
         public MainPageViewModel()
         {
             // Performs the initial draw down from the database 
-            BuildPublicationList(); 
+            BuildPublicationList();
         }
 
         #endregion
@@ -49,6 +49,11 @@ namespace PublicationOrganizer.Core
         /// String that will be used to search for a publication title
         /// </summary>
         public string SearchString { get; set; }
+
+        /// <summary>
+        /// Integer that contains the selected search item
+        /// </summary>
+        public int SelectedSearchIndex { get; set; } = 0; 
 
         #endregion
 
@@ -213,6 +218,7 @@ namespace PublicationOrganizer.Core
         public RelayCommand ResetSearch_COMMAND => new RelayCommand(() =>
         {
             PublicationList = new READ_PublicationsFromDatabase().GetCollectionOfPublications();
+            SelectedSearchIndex = 0; 
             SearchString = string.Empty; 
         });
 

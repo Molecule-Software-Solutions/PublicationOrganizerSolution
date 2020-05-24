@@ -6,22 +6,51 @@
     /// </summary>
     public static class SearchTypeExtensions
     {
-        public static string GetSearchTypeString(this SearchTypes type)
+        /// <summary>
+        /// Returns a <see cref="SearchTypes"/> based on an <see cref="int"/> value
+        /// </summary>
+        /// <param name="searchType"></param>
+        /// <returns></returns>
+        public static SearchTypes GetSearchTypeByInteger(this int searchType)
         {
-            switch (type)
+            switch (searchType)
+            {
+                case 0:
+                    return SearchTypes.Title;
+                case 1:
+                    return SearchTypes.Group;
+                case 2:
+                    return SearchTypes.Location;
+                case 3:
+                    return SearchTypes.Date;
+                case 4:
+                    return SearchTypes.Summary; 
+                default:
+                    return SearchTypes.Title;
+            }
+        }
+
+        /// <summary>
+        /// Returns an integer value based on the selected <see cref="SearchTypes"/>
+        /// </summary>
+        /// <param name="searchType"></param>
+        /// <returns></returns>
+        public static int GetIntBySearchType(this SearchTypes searchType)
+        {
+            switch (searchType)
             {
                 case SearchTypes.Title:
-                    return "TITLE";
+                    return 0;
                 case SearchTypes.Group:
-                    return "GROUP"; 
+                    return 1;
                 case SearchTypes.Location:
-                    return "LOCATION";
-                case SearchTypes.Summary:
-                    return "SUMMARY";
+                    return 2;
                 case SearchTypes.Date:
-                    return "DATE";
+                    return 3;
+                case SearchTypes.Summary:
+                    return 4;
                 default:
-                    return string.Empty; 
+                    return 0; 
             }
         }
     }
