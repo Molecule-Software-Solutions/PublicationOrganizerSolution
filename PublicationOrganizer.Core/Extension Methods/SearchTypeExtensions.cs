@@ -53,5 +53,31 @@
                     return 0; 
             }
         }
+
+        /// <summary>
+        /// Returns the appropriate data table header for the type of search that has been selected
+        /// </summary>
+        /// <param name="searchType"></param>
+        /// <returns></returns>
+        public static string GetColumnIDBySearchType(this SearchTypes searchType)
+        {
+            switch (searchType)
+            {
+                case SearchTypes.Title:
+                    return "Title";
+                case SearchTypes.Group:
+                    return "ItemGroup";
+                case SearchTypes.Location:
+                    return "Location";
+                // NOTE: Date search requires additional logic to process, and thus will not be used, but has been included here for future functionality if required.
+                // Additional Date and RangeDate logic will be required in a special command string
+                case SearchTypes.Date:
+                    return "Date"; 
+                case SearchTypes.Summary:
+                    return "Summary";
+                default:
+                    return string.Empty; 
+            }
+        }
     }
 }

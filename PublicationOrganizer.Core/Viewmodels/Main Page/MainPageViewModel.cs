@@ -106,6 +106,19 @@ namespace PublicationOrganizer.Core
             AddNewPublicationPanelVisibility = true;
         }
 
+        /// <summary>
+        /// Fully resets the search system so that it is ready for the next inquiry
+        /// </summary>
+        private void ResetSearchSystem()
+        {
+            SearchString = string.Empty;
+
+            // The following is commented as it resets the selected search type index when this method is executed.
+            // It was removed because, in most scenarios, the user will perform a similar search the next time he/she
+            // uses the feature. Leaving this available if future developers would like to add the functionality. 
+            //SelectedSearchIndex = 0;
+        }
+
         #endregion
 
         #region Commands  
@@ -207,10 +220,40 @@ namespace PublicationOrganizer.Core
         /// <summary>
         /// Command that performs a Title based search of the publications in the database 
         /// </summary>
-        public RelayCommand PerformTitleSearch_COMMAND => new RelayCommand(() =>
+        public RelayCommand PerformSearch_COMMAND => new RelayCommand(() =>
         {
-            PublicationList = new READ_PublicationsByTitle().GetCollectionOfPublications(SearchString); 
+            SearchTypes currentSearchType = SelectedSearchIndex.GetSearchTypeByInteger();
+            if(currentSearchType == SearchTypes.Date)
+            {
+                ObservableCollection<Publication> dateSearchResults = new ObservableCollection<Publication>();
+                DateTime searchDate;
+                if(DateTime.TryParse(SearchString, out searchDate))
+                {
+                    // If formatting of date is correct...
+                    foreach (Publication pub in new READ_PublicationsFromDatabase().GetCollectionOfPublications())
+                    {
+                        if(searchDate >= pub.Date && searchDate <= pub.EndOfRange)
+                        {
+                            dateSearchResults.Add(pub);
+                        }
+                    }
+                    PublicationList = dateSearchResults; 
+                }
+                else
+                {
+                    // If formatting of date is incorrect...
+                    StaticViewmodelController.ApplicationViewModel.CreateMessageDialog("Date Format Incorrect", "You must enter a date in the following format: mm/dd/yyyy");
+                    PublicationList = new ObservableCollection<Publication>(); 
+                }
+            }
+            else
+            {
+                PublicationList = new READ_PublicationBySearch(currentSearchType, SearchString).GetPublicationsBySearch();
+            }
+            ResetSearchSystem();
         }, !string.IsNullOrEmpty(SearchString));
+
+
 
         /// <summary>
         /// Resets search so that all publications will be listed. 
@@ -218,8 +261,7 @@ namespace PublicationOrganizer.Core
         public RelayCommand ResetSearch_COMMAND => new RelayCommand(() =>
         {
             PublicationList = new READ_PublicationsFromDatabase().GetCollectionOfPublications();
-            SelectedSearchIndex = 0; 
-            SearchString = string.Empty; 
+            ResetSearchSystem(); 
         });
 
         #endregion 

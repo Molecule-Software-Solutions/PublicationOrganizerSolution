@@ -101,8 +101,8 @@
                         <ComboBoxItem>Publication Date</ComboBoxItem>
                         <ComboBoxItem>Summary</ComboBoxItem>
                     </ComboBox>
-                    <TextBox Margin="10 5 0 5" Background="DimGray" Width="200" VerticalAlignment="Center" FontSize="16" FontWeight="DemiBold" Foreground="White" Text="{Binding SearchString, UpdateSourceTrigger=PropertyChanged}"/>
-                    <Button Margin="10 0 0 0" Content="Search" Width="150" Height="30" Background="Black" Foreground="White" BorderBrush="Cyan" Command="{Binding PerformTitleSearch_COMMAND, UpdateSourceTrigger=PropertyChanged}"/>
+                    <TextBox x:Name="SearchTextBox" Margin="10 5 0 5" Background="DimGray" Width="200" VerticalAlignment="Center" FontSize="16" FontWeight="DemiBold" Foreground="White" Text="{Binding SearchString, UpdateSourceTrigger=PropertyChanged}" KeyDown="SearchTextBox_KeyDown"/>
+                    <Button Margin="10 0 0 0" Content="Search" Width="150" Height="30" Background="Black" Foreground="White" BorderBrush="Cyan" Command="{Binding PerformSearch_COMMAND, UpdateSourceTrigger=PropertyChanged}"/>
                     <Button Margin="10 0 0 0" Content="Reset" Width="150" Height="30" Background="Black" Foreground="White" BorderBrush="Purple" Command="{Binding ResetSearch_COMMAND, UpdateSourceTrigger=PropertyChanged}"/>
                 </StackPanel>
             </Grid>
