@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:PublicationOrganizerUI"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Border BorderBrush="Black" Background="{StaticResource BorderBackgroundBrush}" CornerRadius="10" BorderThickness="3">
+    <Border BorderBrush="{StaticResource BORDER_BRUSH_Gradient}" Background="{StaticResource BORDER_BACKGROUND_Gradient}" CornerRadius="10" BorderThickness="3">
         <Border.Resources>
             <Style TargetType="TextBox">
                 <Setter Property="CaretBrush" Value="White"/>
@@ -31,7 +31,7 @@
                 </Grid.RowDefinitions>
 
                 <!--Panel Title-->
-                <Border Grid.Row="0" BorderBrush="Black" Background="{StaticResource BorderBackgroundBrush}" CornerRadius="10" Margin="5" BorderThickness="3">
+                <Border Grid.Row="0" BorderBrush="{StaticResource BORDER_BRUSH_Gradient}" Background="{StaticResource BORDER_BACKGROUND_Gradient}" CornerRadius="10" Margin="5" BorderThickness="3">
                     <Border.Effect>
                         <DropShadowEffect/>
                     </Border.Effect>
@@ -70,8 +70,8 @@
                         <ColumnDefinition/>
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
-                    <Button Grid.Column="0" Margin="5" Height="40" Content="Save Edit" FontSize="16" Foreground="Green" FontWeight="DemiBold" Background="Black" BorderBrush="Green" Command="{Binding CommitEditedPublication_COMMAND, UpdateSourceTrigger=PropertyChanged}"/>
-                    <Button Grid.Column="1" Margin="5" Height="40" Content="Cancel" FontSize="16" Foreground="Red" FontWeight="DemiBold" Background="Black" BorderBrush="Red" Command="{Binding HidePublicationEditPanel_COMMAND, UpdateSourceTrigger=PropertyChanged}"/>
+                    <Button Grid.Column="0" Margin="5" Height="40" Content="Save Edit" FontSize="16" Foreground="White" FontWeight="DemiBold" Background="DarkGreen" Command="{Binding CommitEditedPublication_COMMAND, UpdateSourceTrigger=PropertyChanged}" Style="{DynamicResource BUTTON_STYLE_ArtDeco}"/>
+                    <Button Grid.Column="1" Margin="5" Height="40" Content="Cancel" FontSize="16" Foreground="White" FontWeight="DemiBold" Background="DarkRed" Command="{Binding HidePublicationEditPanel_COMMAND, UpdateSourceTrigger=PropertyChanged}" Style="{DynamicResource BUTTON_STYLE_ArtDeco}"/>
                 </Grid>
             </Grid>
         </ScrollViewer>

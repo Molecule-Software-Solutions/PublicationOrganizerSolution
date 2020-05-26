@@ -5,12 +5,47 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PublicationOrganizerUI"
         mc:Ignorable="d"
-        Background="DimGray"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        Background="Transparent"
         WindowStartupLocation="CenterScreen"
-        Title="Publication Organizer" Height="600" Width="800">
-    <Grid>
-        <Frame Panel.ZIndex="0" x:Name="PageContentFrame" NavigationUIVisibility="Hidden"/>
-        <Frame Panel.ZIndex="1" x:Name="DialogContentFrame" NavigationUIVisibility="Hidden"/>
-        <Frame Panel.ZIndex="2" x:Name="ContentOverlayFrame" NavigationUIVisibility="Hidden"/>
-    </Grid>
+        Title="Publication Organizer" Height="600" Width="1000">
+    <Border ClipToBounds="True" Padding="9" BorderThickness="3" Background="{StaticResource WINDOW_BASCKGROUND_Solid}" BorderBrush="{StaticResource BORDER_BRUSH_Gradient}" CornerRadius="10">
+        <Border.Effect>
+            <DropShadowEffect/> 
+        </Border.Effect>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <!--Window Control Area-->
+            <Grid Grid.Row="0" x:Name="WindowControlsContainer" MouseDown="WindowControlsContainer_MouseDown">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Rectangle Grid.Column="0" Panel.ZIndex="0" Grid.ColumnSpan="2" Fill="Transparent" Margin="0 -8 0 0"/>
+                <TextBlock Grid.Column="0" Margin="15 0 0 0" Text="Publication Organizer" FontSize="14" FontWeight="DemiBold" Foreground="Silver">
+                    <TextBlock.Effect>
+                        <DropShadowEffect/> 
+                    </TextBlock.Effect>
+                </TextBlock>
+                <StackPanel Grid.Column="2" Orientation="Horizontal">
+                    <Button x:Name="Minimize_BTN" Style="{StaticResource BUTTON_STYLE_ArtDeco}" Background="Black" Content="q" FontFamily="Wingdings 3" Foreground="Yellow" Click="Minimize_BTN_Click"/>
+                    <Button x:Name="Maximize_BTN" Style="{StaticResource BUTTON_STYLE_ArtDeco}" Background="Black" Content="4" FontFamily="Wingdings 2" Foreground="LightGreen" Click="Maximize_BTN_Click"/>
+                    <Button x:Name="Close_BTN" Style="{StaticResource BUTTON_STYLE_ArtDeco}" Background="Black" Content="Ó" FontFamily="Wingdings 2" Foreground="Red" Click="Close_BTN_Click"/>
+                </StackPanel>
+            </Grid>
+
+            <!--Window Presentation Area-->
+            <Grid Grid.Row="1">
+                <Frame Panel.ZIndex="0" x:Name="PageContentFrame" NavigationUIVisibility="Hidden"/>
+                <Frame Panel.ZIndex="1" x:Name="DialogContentFrame" NavigationUIVisibility="Hidden"/>
+                <Frame Panel.ZIndex="2" x:Name="ContentOverlayFrame" NavigationUIVisibility="Hidden"/>
+            </Grid>
+        </Grid>
+    </Border>
 </Window>

@@ -58,5 +58,32 @@ namespace PublicationOrganizerUI
         {
             DialogContentFrame.Content = null; 
         }
+
+        private void WindowControlsContainer_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            DragMove(); 
+        }
+
+        private void Minimize_BTN_Click(object sender, RoutedEventArgs e)
+        {
+            this.WindowState = WindowState.Minimized; 
+        }
+
+        private void Maximize_BTN_Click(object sender, RoutedEventArgs e)
+        {
+            if(WindowState == WindowState.Maximized)
+            {
+                WindowState = WindowState.Normal; 
+            }
+            else
+            {
+                WindowState = WindowState.Maximized;
+            }
+        }
+
+        private void Close_BTN_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown(); 
+        }
     }
 }
