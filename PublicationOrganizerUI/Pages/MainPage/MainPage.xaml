@@ -9,32 +9,23 @@
       Title="Publication Organizer Main Page">
 
     <Grid>
+        <Grid.Resources>
+            <local:PanelVisibilityFromBooleanConverter x:Key="VisibilityConverter"/>
+        </Grid.Resources>
         <Grid.RowDefinitions>
-            <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
             <RowDefinition/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        <Grid.Resources>
-            <local:PanelVisibilityFromBooleanConverter x:Key="VisibilityConverter"/>
-        </Grid.Resources>
-        
+
         <!--Panel Resources (Note, panels span multiple rows)-->
         <local:AddNewPublicationUserControl Panel.ZIndex="1" x:Name="NewEntryPanel" Grid.Row="0" Grid.RowSpan="4" Width="600" Height="350" Visibility="{Binding AddNewPublicationPanelVisibility, Converter={StaticResource VisibilityConverter}, UpdateSourceTrigger=PropertyChanged}" d:IsHidden="True"/>
         <local:EditPublicationUserControl Panel.ZIndex="2" x:Name="EditEntryPanel" Grid.Row="0" Grid.RowSpan="4" Width="600" Height="350" Visibility="{Binding EditPublicationPanelVisibility, Converter={StaticResource VisibilityConverter}, UpdateSourceTrigger=PropertyChanged}" d:IsHidden="True"/>
 
-        <!--Title-->
-        <Border Grid.Row="0" Margin="5" CornerRadius="10" BorderThickness="3" BorderBrush="Black" Background="{StaticResource BorderBackgroundBrush}">
-            <Border.Effect>
-                <DropShadowEffect/> 
-            </Border.Effect>
-            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Text="Publication Organizer" FontSize="16" Foreground="White" FontWeight="DemiBold"/>
-        </Border>
-        
         <!--Control Buttons-->
-        <Border Grid.Row="1" Margin="5" CornerRadius="10" BorderThickness="3" BorderBrush="Black" Background="{StaticResource BorderBackgroundBrush}">
+        <Border Grid.Row="0" Margin="5 15 5 5" Padding="5" CornerRadius="10" BorderThickness="2" BorderBrush="{StaticResource BORDER_BRUSH_Gradient}" Background="{StaticResource BORDER_BACKGROUND_Gradient}">
             <Border.Effect>
-                <DropShadowEffect/> 
+                <DropShadowEffect/>
             </Border.Effect>
             <Grid Margin="3">
                 <Grid.ColumnDefinitions>
@@ -42,24 +33,28 @@
                     <ColumnDefinition/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
-                
+
                 <!--Add New Button-->
-                <Button Grid.Column="0" Width="160" Content="Add New" FontWeight="Bold" Foreground="Green" FontSize="16" Command="{Binding ShowAddNewPublication_COMMAND, UpdateSourceTrigger=PropertyChanged}"/>
-                <Button Grid.Column="1" Width="160"  Content="Delete Selected" FontWeight="Bold" Foreground="Red" FontSize="16" Command="{Binding DeleteSelectedPublication_COMMAND, UpdateSourceTrigger=PropertyChanged}"/>
-                <Button Grid.Column="2" Width="160" Content="Edit Selected" FontWeight="Bold" Foreground="Black" FontSize="16" Command="{Binding ShowPublicationEditPanel_COMMAND, UpdateSourceTrigger=PropertyChanged}"/>
+                <Rectangle Opacity=".5" Panel.ZIndex="0" Grid.Column="0" Grid.ColumnSpan="3"/>
+                <Button Style="{StaticResource BUTTON_STYLE_ArtDeco}" Background="DarkGreen" Grid.Column="0" Width="160" Content="Add New" FontWeight="Bold" Foreground="White" FontSize="16" Command="{Binding ShowAddNewPublication_COMMAND, UpdateSourceTrigger=PropertyChanged}"/>
+                <Button Grid.Column="1" Width="160"  Content="Delete Selected" FontWeight="Bold" Foreground="White" Background="DarkRed" FontSize="16" Command="{Binding DeleteSelectedPublication_COMMAND, UpdateSourceTrigger=PropertyChanged}" Style="{DynamicResource BUTTON_STYLE_ArtDeco}"/>
+                <Button Grid.Column="2" Width="160" Content="Edit Selected" FontWeight="Bold" Foreground="White" Background="DarkBlue" FontSize="16" Command="{Binding ShowPublicationEditPanel_COMMAND, UpdateSourceTrigger=PropertyChanged}" Style="{DynamicResource BUTTON_STYLE_ArtDeco}"/>
 
             </Grid>
         </Border>
-        
+
         <!--Data Listing Grid-->
-        <Border Grid.Row="2" BorderBrush="Black" BorderThickness="3" Background="{StaticResource BorderBackgroundBrush}" CornerRadius="10" Margin="5">
+        <Border Grid.Row="1" BorderBrush="{StaticResource BORDER_BRUSH_Gradient}" BorderThickness="2" Background="{StaticResource BORDER_BACKGROUND_Gradient}" CornerRadius="10" Margin="5">
             <Border.Effect>
                 <DropShadowEffect/>
             </Border.Effect>
 
-            <DataGrid Margin="5" BorderBrush="Transparent" Background="{StaticResource BorderBackgroundBrush}"
+            <DataGrid Style="{DynamicResource DataGrid_STYLE}" Margin="5" BorderBrush="Transparent" Background="{StaticResource BORDER_BACKGROUND_Gradient}"
                       ItemsSource="{Binding PublicationList, UpdateSourceTrigger=PropertyChanged}" SelectedItem="{Binding SelectedPublication, UpdateSourceTrigger=PropertyChanged}" AutoGenerateColumns="False"
                       CanUserAddRows="False" IsReadOnly="True" CanUserDeleteRows="False" FontWeight="DemiBold" FontSize="14">
+                <DataGrid.Effect>
+                    <DropShadowEffect/>
+                </DataGrid.Effect>
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Title" Binding="{Binding Title}"/>
                     <DataGridTextColumn Header="Group" Binding="{Binding Group}"/>
@@ -68,46 +63,47 @@
                     <DataGridTextColumn Header="End of Date Range" Binding="{Binding EndOfRange, StringFormat=MM/dd/yyyy}" Visibility="{Binding RangeUsed, Converter={StaticResource VisibilityConverter}, UpdateSourceTrigger=PropertyChanged}"/>
                     <DataGridTextColumn Header="Summary" Width="300" Binding="{Binding Summary}"/>
                 </DataGrid.Columns>
-                
+
             </DataGrid>
         </Border>
-        
+
         <!--Search Functions-->
-        <Border Grid.Row="3" Margin="5" BorderBrush="Black" BorderThickness="3" CornerRadius="10" Background="{StaticResource BorderBackgroundBrush}" >
+        <Border Grid.Row="2" Margin="5" BorderBrush="{StaticResource BORDER_BRUSH_Gradient}" BorderThickness="2" CornerRadius="10" Background="{StaticResource BORDER_BACKGROUND_Gradient}" >
             <Border.Effect>
-                <DropShadowEffect/> 
+                <DropShadowEffect/>
             </Border.Effect>
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
-                <Border Grid.Row="0" Margin="5" BorderBrush="Black" BorderThickness="3" CornerRadius="0 0 10 10" Background="{StaticResource BorderBackgroundBrush}">
+                <Border Grid.Row="0" Margin="5" BorderBrush="{StaticResource BORDER_BRUSH_Gradient}" BorderThickness="2"
+                        CornerRadius="0 0 10 10" Background="{StaticResource BORDER_BACKGROUND_Gradient}">
                     <Border.Effect>
-                        <DropShadowEffect/> 
+                        <DropShadowEffect/>
                     </Border.Effect>
-                    
+
                     <!--Search Area Title-->
                     <TextBlock Text="Search Publications" FontWeight="DemiBold" Foreground="White" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 
                 </Border>
-                    
+
                 <!--Search Area Functions-->
                 <StackPanel Grid.Row="1" Orientation="Horizontal" Height="40" HorizontalAlignment="Center">
                     <ComboBox Width="150" Margin="5 0 0 0" Text="Select Search Item" FontSize="16" Foreground="Black" FontWeight="DemiBold" HorizontalAlignment="Left" VerticalAlignment="Center" SelectedIndex="{Binding SelectedSearchIndex, UpdateSourceTrigger=PropertyChanged}">
-                        <ComboBoxItem>Title</ComboBoxItem>
-                        <ComboBoxItem>Group</ComboBoxItem>
-                        <ComboBoxItem>Location</ComboBoxItem>
-                        <ComboBoxItem>Publication Date</ComboBoxItem>
-                        <ComboBoxItem>Summary</ComboBoxItem>
+                        <ComboBoxItem Content="Title"/>
+                        <ComboBoxItem Content="Group"/>
+                        <ComboBoxItem Content="Location"/>
+                        <ComboBoxItem Content="Publication Date"/>
+                        <ComboBoxItem Content="Summary"/>
                     </ComboBox>
                     <TextBox x:Name="SearchTextBox" Margin="10 5 0 5" Background="DimGray" Width="200" VerticalAlignment="Center" FontSize="16" FontWeight="DemiBold" Foreground="White" Text="{Binding SearchString, UpdateSourceTrigger=PropertyChanged}" KeyDown="SearchTextBox_KeyDown"/>
-                    <Button Margin="10 0 0 0" Content="Search" Width="150" Height="30" Background="Black" Foreground="White" BorderBrush="Cyan" Command="{Binding PerformSearch_COMMAND, UpdateSourceTrigger=PropertyChanged}"/>
-                    <Button Margin="10 0 0 0" Content="Reset" Width="150" Height="30" Background="Black" Foreground="White" BorderBrush="Purple" Command="{Binding ResetSearch_COMMAND, UpdateSourceTrigger=PropertyChanged}"/>
+                    <Button Margin="10 0 0 0" Content="Search" Width="150" Height="30" Background="DarkGreen" Foreground="White" Command="{Binding PerformSearch_COMMAND, UpdateSourceTrigger=PropertyChanged}" Style="{DynamicResource BUTTON_STYLE_ArtDeco}"/>
+                    <Button Margin="10 0 0 0" Content="Reset" Width="150" Height="30" Background="Purple" Foreground="White" Command="{Binding ResetSearch_COMMAND, UpdateSourceTrigger=PropertyChanged}" Style="{DynamicResource BUTTON_STYLE_ArtDeco}"/>
                 </StackPanel>
             </Grid>
 
         </Border>
-        
+
     </Grid>
 </Page>
