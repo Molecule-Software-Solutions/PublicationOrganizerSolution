@@ -1,4 +1,9 @@
-# PublicationOrganizerSolution
+# Publication Organizer
+## Creator
+Molecule Software
+Joshua H. Santiago
+Please contact me at *joshman1019@gmail.com* for inquires
+
 ## Purpose
 The purpose of this application is to provide an easy management facility for organizing a collection of publications (magazines, newspapers, etc.).
 
