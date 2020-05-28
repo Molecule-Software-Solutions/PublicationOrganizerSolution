@@ -1,18 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using PublicationOrganizer.Core;
+using System;
 using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using PublicationOrganizer.Core; 
 
 namespace PublicationOrganizerUI
 {
@@ -39,6 +29,19 @@ namespace PublicationOrganizerUI
         private void EventSubscriber()
         {
             ViewModel.PropertyChanged += ViewModel_PropertyChanged;
+            ViewModel.WindowChromeDoubleClickResizeCalled += ViewModel_WindowChromeDoubleClickResizeCalled;
+        }
+
+        private void ViewModel_WindowChromeDoubleClickResizeCalled(object sender, EventArgs e)
+        {
+            if(WindowState == WindowState.Maximized)
+            {
+                WindowState = WindowState.Normal; 
+            }
+            else
+            {
+                WindowState = WindowState.Maximized; 
+            }
         }
 
         private void ViewModel_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
@@ -59,9 +62,21 @@ namespace PublicationOrganizerUI
             DialogContentFrame.Content = null; 
         }
 
-        private void WindowControlsContainer_MouseDown(object sender, MouseButtonEventArgs e)
+        private async void WindowControlsContainer_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            DragMove(); 
+            if(WindowState == WindowState.Maximized)
+            {
+                await Task.Delay(200);
+                WindowState = WindowState.Normal;
+                if(Mouse.PrimaryDevice.LeftButton == MouseButtonState.Pressed)
+                {
+                    DragMove(); 
+                }
+            }
+            else
+            {
+                DragMove(); 
+            }
         }
 
         private void Minimize_BTN_Click(object sender, RoutedEventArgs e)

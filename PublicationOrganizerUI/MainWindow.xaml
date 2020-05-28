@@ -22,6 +22,9 @@
 
             <!--Window Control Area-->
             <Grid Grid.Row="0" x:Name="WindowControlsContainer" MouseDown="WindowControlsContainer_MouseDown">
+                <Grid.InputBindings>
+                    <MouseBinding MouseAction="LeftDoubleClick" Command="{Binding WindowChromeDoubleClick_COMMAND}"/> 
+                </Grid.InputBindings>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto"/>
                     <ColumnDefinition/>

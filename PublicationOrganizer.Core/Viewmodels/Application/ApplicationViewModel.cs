@@ -1,5 +1,6 @@
 ﻿using PublicationOrganizer.Core.Enum;
-using PublicationOrganizer.Core.Migration; 
+using PublicationOrganizer.Core.Migration;
+using System;
 
 namespace PublicationOrganizer.Core
 {
@@ -12,7 +13,7 @@ namespace PublicationOrganizer.Core
         /// </summary>
         public ApplicationViewModel()
         {
-            PerformApplicationMaintenanceFunctions(); 
+            PerformApplicationMaintenanceFunctions();
         }
 
         #endregion
@@ -22,7 +23,7 @@ namespace PublicationOrganizer.Core
         /// <summary>
         /// The current page that the user has navigated to
         /// </summary>
-        public PageTypes CurrentPage { get; set; } = PageTypes.MainPage; 
+        public PageTypes CurrentPage { get; set; } = PageTypes.MainPage;
 
         /// <summary>
         /// The viewmodel that will control standard message viewmodels
@@ -53,7 +54,7 @@ namespace PublicationOrganizer.Core
         /// <param name="page"></param>
         public void NavigateToPage(PageTypes page)
         {
-            CurrentPage = page; 
+            CurrentPage = page;
         }
 
         /// <summary>
@@ -63,8 +64,27 @@ namespace PublicationOrganizer.Core
         /// <param name="message">Message contained within the body of the dialog box</param>
         public void CreateMessageDialog(string header, string message)
         {
-            StandardMessageDialogViewModel = new StandardDialogViewModel(header, message); 
+            StandardMessageDialogViewModel = new StandardDialogViewModel(header, message);
         }
+
+        #endregion
+
+        #region Commands 
+
+        /// <summary>
+        /// Command fired by a double left mouse click on the window chrome top border
+        /// NOTE: This command notifies the subscribing main window that a double click resize request has been submitted
+        /// </summary>
+        public RelayCommand WindowChromeDoubleClick_COMMAND => new RelayCommand(() =>
+        {
+            WindowChromeDoubleClickResizeCalled.Invoke(this, EventArgs.Empty); 
+        });
+
+        #endregion
+
+        #region Public Events 
+
+        public event EventHandler WindowChromeDoubleClickResizeCalled = (sender, e) => { }; 
 
         #endregion 
     }
