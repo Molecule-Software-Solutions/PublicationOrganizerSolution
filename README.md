@@ -1,7 +1,7 @@
 # Publication Organizer
 ## Creator
-Molecule Software
-Joshua H. Santiago
+### Molecule Software
+Developer: Joshua H. Santiago
 Please contact me at *joshman1019@gmail.com* for inquires
 
 ## Purpose
