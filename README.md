@@ -33,3 +33,18 @@ The purpose of this application is to provide an easy management facility for or
 * **NOTE: Searching dates requires the user to enter a date in the following format mm/dd/yyyy, or m/d/yyyy**
 * Click the **Search** button
 * If the search finds results, they will be displayed in the publication list above
+
+## Field Explanation
+### Title
+The title of the publication to store
+### Group
+Any grouping that you wish to assign to your publication (magazines, articles, newspapers, etc).
+### Location
+The location where the item is being stored (Box24, Drawer19, Scanned, Etc.).
+### Summary
+A brief summary of the publication
+### Publication Date
+The date that the publication was published
+### End Date
+If the publication spanned multiple dates, this is the last date of the publication
+*NOTE: Searches involving publication dates will search between the two dates ranges*
