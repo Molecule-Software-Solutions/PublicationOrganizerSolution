@@ -1,6 +1,8 @@
 ﻿using PublicationOrganizer.Core;
+using PublicationOrganizerUI.Pages.Dialog;
 using System;
 using System.Threading.Tasks;
+using System.Timers;
 using System.Windows;
 using System.Windows.Input;
 
@@ -18,19 +20,65 @@ namespace PublicationOrganizerUI
             DataContext = ViewModel; 
             InitializeComponent();
             EventSubscriber();
-            SetInitialPage(); 
+            SetInitialPage();
+            CreateSplashDialog(); 
         }
 
+        /// <summary>
+        /// Sets the initial display page
+        /// </summary>
         private void SetInitialPage()
         {
             PageContentFrame.Content = ViewModel.CurrentPage.GetApplicationPage();
         }
 
+        /// <summary>
+        /// Creates the splash dialog, sets properties, and begins timer sequence
+        /// </summary>
+        private void CreateSplashDialog()
+        {
+            SplashDialog SD = new SplashDialog();
+            SD.Width = 600;
+            SD.Height = 200;
+            SD.HorizontalAlignment = HorizontalAlignment.Center;
+            SD.VerticalAlignment = VerticalAlignment.Center;
+            ContentOverlayFrame.Content = SD;
+            StartSplashTimer();
+        }
+
+        /// <summary>
+        /// Starts a 2 second splash screen timer
+        /// </summary>
+        private void StartSplashTimer()
+        {
+            Timer tmr = new Timer(2000);
+            tmr.Start();
+            tmr.Elapsed += Tmr_Elapsed;
+        }
+
+        /// <summary>
+        /// Terminates the splash screen after the timer elapses
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Tmr_Elapsed(object sender, ElapsedEventArgs e)
+        {
+            Application.Current.Dispatcher.Invoke(() =>
+            {
+                ContentOverlayFrame.Content = null;
+            }); 
+        }
+
+        /// <summary>
+        /// Subscribes to viewmodel events
+        /// </summary>
         private void EventSubscriber()
         {
             ViewModel.PropertyChanged += ViewModel_PropertyChanged;
             ViewModel.WindowChromeDoubleClickResizeCalled += ViewModel_WindowChromeDoubleClickResizeCalled;
         }
+
+        #region Event Handlers
 
         private void ViewModel_WindowChromeDoubleClickResizeCalled(object sender, EventArgs e)
         {
@@ -100,5 +148,7 @@ namespace PublicationOrganizerUI
         {
             Application.Current.Shutdown(); 
         }
+
+        #endregion 
     }
 }

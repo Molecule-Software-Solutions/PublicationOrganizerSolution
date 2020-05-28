@@ -32,7 +32,6 @@ namespace PublicationOrganizer.Core
 
         #endregion
 
-
         #region Private Methods 
 
         /// <summary>

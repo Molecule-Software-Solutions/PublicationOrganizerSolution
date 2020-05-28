@@ -1,0 +1,39 @@
+﻿<local:DialogBase x:Class="PublicationOrganizerUI.Pages.Dialog.SplashDialog"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:PublicationOrganizerUI"
+      mc:Ignorable="d" 
+      Title="SplashDialog">
+
+    <Border BorderBrush="{StaticResource BORDER_BRUSH_Gradient}" BorderThickness="3" Background="{StaticResource BORDER_BACKGROUND_Gradient}" CornerRadius="10">
+        <Grid VerticalAlignment="Center">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition/> 
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/> 
+            </Grid.RowDefinitions>
+            
+            <!--Display Image-->
+            <Image Grid.Column="0" Grid.Row="0" Source="Pack://Application:,,,/Resources/Graphics/PublicationOrganizer Logo.png" Height="80" Width="Auto" Margin="10" RenderOptions.BitmapScalingMode="HighQuality"/>
+            <Image Grid.Column="0" Grid.Row="1" Source="Pack://Application:,,,/Resources/Graphics/MoleculeLogoOnlyWhite-01.png" Height="80" Width="Auto" Margin="10" RenderOptions.BitmapScalingMode="HighQuality"/>
+            
+            <!--Title-->
+            <StackPanel Grid.Column="1" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Center">
+                <TextBlock Text="Publication Organizer" FontSize="25" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="0" Grid.Column="2" Margin="15 0 15 0"/>
+                <TextBlock Text="By Molecule Software" FontSize="16" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="15 0 15 0"/> 
+            </StackPanel>
+            
+            <!--Alert-->
+            <StackPanel Grid.Column="1" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center" >
+                <TextBlock Text="Use and distribution of this software and its related source code is governed by the GNU Affero General Public License v3.0" Foreground="White" FontSize="14" TextWrapping="WrapWithOverflow" Margin="15 0 15 0" Width="400"/>
+                <TextBlock Text="To view the license, visit: https://github.com/joshman1019/PublicationOrganizerSolution/blob/master/LICENSE" Foreground="White" FontSize="14" TextWrapping="WrapWithOverflow" Margin="15 8 15 0" Width="400"/>
+            </StackPanel>
+
+        </Grid>
+    </Border>
+</local:DialogBase>

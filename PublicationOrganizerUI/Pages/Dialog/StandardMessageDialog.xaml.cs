@@ -1,16 +1,13 @@
-﻿using PublicationOrganizer.Core;
-using System.Windows.Controls;
-
-namespace PublicationOrganizerUI
+﻿namespace PublicationOrganizerUI
 {
     /// <summary>
     /// Interaction logic for StandardMessageDialog.xaml
     /// </summary>
-    public partial class StandardMessageDialog : BaseDialog
+    public partial class StandardMessageDialog : DialogBase
     {
         public StandardMessageDialog()
         {
-            InitializeComponent();
+            InitializeComponent(); 
         }
     }
 }

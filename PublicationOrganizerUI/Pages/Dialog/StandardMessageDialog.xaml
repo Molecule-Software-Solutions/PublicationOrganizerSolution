@@ -1,4 +1,4 @@
-﻿<local:BaseDialog x:Class="PublicationOrganizerUI.StandardMessageDialog"
+﻿<local:DialogBase x:Class="PublicationOrganizerUI.StandardMessageDialog"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -44,4 +44,4 @@
             
         </Border>
     </Grid>    
-</local:BaseDialog>
+</local:DialogBase>

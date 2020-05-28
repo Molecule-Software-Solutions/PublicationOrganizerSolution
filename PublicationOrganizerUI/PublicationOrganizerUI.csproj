@@ -8,7 +8,21 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Resources\Graphics\MoleculeLogoOnlyWhite-01.png" />
+    <None Remove="Resources\Graphics\PublicationOrganizer Logo.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\PublicationOrganizer.Core\PublicationOrganizer.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\Graphics\MoleculeLogoOnlyWhite-01.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Graphics\PublicationOrganizer Logo.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
 
   <ItemGroup>
@@ -18,9 +32,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="Resources\Graphics\PublicationOrganizer Logo.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
     <None Update="Resources\Graphics\publicationorganizer_ICON.ico">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
