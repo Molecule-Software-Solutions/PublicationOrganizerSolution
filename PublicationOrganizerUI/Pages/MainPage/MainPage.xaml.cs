@@ -1,5 +1,4 @@
 ﻿using PublicationOrganizer.Core;
-using System.Windows.Controls;
 using System.Windows.Input;
 
 namespace PublicationOrganizerUI
@@ -7,14 +6,12 @@ namespace PublicationOrganizerUI
     /// <summary>
     /// Interaction logic for MainPage.xaml
     /// </summary>
-    public partial class MainPage : Page
+    public partial class MainPage : BasePage<MainPageViewModel>
     {
-        private MainPageViewModel ViewModel = new MainPageViewModel(); 
-
+        // Default Constructor
         public MainPage()
         {
-            DataContext = ViewModel; 
-            InitializeComponent();
+            InitializeComponent(); 
         }
 
         /// <summary>

@@ -6,13 +6,10 @@ namespace PublicationOrganizerUI
     /// <summary>
     /// Interaction logic for StandardMessageDialog.xaml
     /// </summary>
-    public partial class StandardMessageDialog : Page
+    public partial class StandardMessageDialog : BaseDialog
     {
-        StandardDialogViewModel ViewModel; 
-        public StandardMessageDialog(object viewModel)
+        public StandardMessageDialog()
         {
-            ViewModel = viewModel as StandardDialogViewModel;
-            DataContext = ViewModel; 
             InitializeComponent();
         }
     }

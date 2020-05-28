@@ -1,4 +1,5 @@
-﻿using PublicationOrganizer.Core.Enum;
+﻿using PublicationOrganizer.Core;
+using PublicationOrganizer.Core.Enum;
 using System.Windows.Controls;
 
 namespace PublicationOrganizerUI

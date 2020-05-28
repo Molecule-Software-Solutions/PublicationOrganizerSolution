@@ -63,7 +63,7 @@ namespace PublicationOrganizer.Core
         /// <param name="message">Message contained within the body of the dialog box</param>
         public void CreateMessageDialog(string header, string message)
         {
-            StandardMessageDialogViewModel = new StandardDialogViewModel(header, message);
+            StandardMessageDialogViewModel = new StandardDialogViewModel(header, message); 
         }
 
         #endregion 

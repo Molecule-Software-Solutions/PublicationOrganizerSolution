@@ -2,22 +2,17 @@
 
 namespace PublicationOrganizer.Core
 {
-    public class StandardDialogViewModel
+    public class StandardDialogViewModel : BaseViewModel
     {
-        #region Constructor
+        #region Constructor 
 
-        /// <summary>
-        /// Default constructor
-        /// </summary>
-        /// <param name="dialogTitle"></param>
-        /// <param name="dialogMessage"></param>
-        public StandardDialogViewModel(string dialogTitle, string dialogMessage)
+        public StandardDialogViewModel(string header, string message)
         {
-            DialogTitle = dialogTitle;
-            DialogMessage = dialogMessage; 
+            DialogTitle = header;
+            DialogMessage = message; 
         }
 
-        #endregion
+        #endregion 
 
         #region Properties 
 
