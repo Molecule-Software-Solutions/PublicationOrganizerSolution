@@ -24,7 +24,7 @@ The purpose of this application is to provide an easy management facility for or
 * Click the **Delete Selected** button
 * A dialog will pop up confirming the deletion
 
-### To Edit and existing publication
+### To Edit an existing publication
 * Click on an existing publication etnry in the publication list
 * the **Edit Selected** button will become active
 * Click the **Edit Selected** button
