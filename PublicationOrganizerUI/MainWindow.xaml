@@ -11,9 +11,6 @@
         WindowStartupLocation="CenterScreen"
         Title="Publication Organizer" Height="600" Width="1000">
     <Border ClipToBounds="True" Padding="9" BorderThickness="3" Background="{StaticResource WINDOW_BASCKGROUND_Solid}" BorderBrush="{StaticResource BORDER_BRUSH_Gradient}" CornerRadius="10">
-        <Border.Effect>
-            <DropShadowEffect/> 
-        </Border.Effect>
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>

@@ -114,9 +114,9 @@
                             </Grid.ColumnDefinitions>
                             <Rectangle x:Name="rectangle" Fill="{DynamicResource BUTTON_GLASS_BACKGROUND_Gradient}" Opacity="1" Panel.ZIndex="0" Grid.Column="0" Grid.ColumnSpan="3"/>
                             <Rectangle x:Name="rectangle_2" Fill="{DynamicResource BUTTON_GLASS_BACKGROUND_HoverGradient}" Opacity="0" Panel.ZIndex="1" Grid.Column="0" Grid.ColumnSpan="3"/>
-                            <Border x:Name="border1" Panel.ZIndex="2" Grid.Column="0" BorderThickness="0 0 3 0" BorderBrush="{DynamicResource BORDER_BRUSH_Gradient}" Margin="8 0 5 0"/>
+                            <Border x:Name="border1" Panel.ZIndex="2" Grid.Column="0" BorderThickness="0 0 3 0" BorderBrush="{DynamicResource BORDER_BRUSH_Gradient}" Margin="8 -1 5 -1"/>
                             <ContentPresenter Panel.ZIndex="2" Grid.Column="1" x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
-                            <Border x:Name="border2" Panel.ZIndex="2" Grid.Column="2" BorderThickness="3 0 0 0" BorderBrush="{DynamicResource BORDER_BRUSH_Gradient}" Margin="5 0 8 0"/>
+                            <Border x:Name="border2" Panel.ZIndex="2" Grid.Column="2" BorderThickness="3 0 0 0" BorderBrush="{DynamicResource BORDER_BRUSH_Gradient}" Margin="5 -1 8 -1"/>
                         </Grid>
                     </Border>
                 </ControlTemplate>

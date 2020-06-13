@@ -1,0 +1,54 @@
+﻿<Application xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="PublicationOrganizerAvalonia.App">
+    <Application.Styles>
+        <StyleInclude Source="avares://Avalonia.Themes.Default/DefaultTheme.xaml"/>
+        <StyleInclude Source="avares://Avalonia.Themes.Default/Accents/BaseLight.xaml"/>
+    </Application.Styles>
+  <Application.Resources>
+    <ResourceDictionary>
+      
+      <!--Application Colors-->
+      
+      <!--Solid Color Brushes-->
+      <SolidColorBrush x:Key="BORDER_BACKGROUND_Solid" Color="DimGray"/>
+      <SolidColorBrush x:Key="WINDOW_BASCKGROUND_Solid" Color="#2b2b2b"/>
+
+      <!--Linear Gradient Brushes-->
+      <LinearGradientBrush x:Key="BORDER_BRUSH_Gradient" StartPoint="0 0" EndPoint="1 1" >
+        <GradientStop Color="DarkGray" Offset="0"/>
+        <GradientStop Color="DimGray" Offset=".25"/>
+        <GradientStop Color="White" Offset=".40"/>
+        <GradientStop Color="Gray" Offset=".5"/>
+        <GradientStop Color="DimGray" Offset=".75"/>
+        <GradientStop Color="DarkGray" Offset="1"/>
+      </LinearGradientBrush>
+
+      <LinearGradientBrush x:Key="BORDER_BACKGROUND_Gradient" Opacity="0.6" StartPoint="0,0" EndPoint="1,1">
+        <GradientStop Color="Black" Offset="0"/>
+        <GradientStop Color="DimGray" Offset="0.25"/>
+        <GradientStop Color="Black" Offset=".5"/>
+        <GradientStop Color="DimGray" Offset="0.75"/>
+        <GradientStop Color="Black" Offset="1"/>
+      </LinearGradientBrush>
+
+      <LinearGradientBrush x:Key="PAGE_BACKGROUND_Gradient" StartPoint="0 0" EndPoint="1 1">
+        <GradientStop Color="Black" Offset="0"/>
+        <GradientStop Color="DarkGray" Offset=".5"/>
+        <GradientStop Color="Black" Offset="1"/>
+      </LinearGradientBrush>
+
+      <LinearGradientBrush x:Key="BUTTON_GLASS_BACKGROUND_Gradient" StartPoint="0 0" EndPoint="0 1" Opacity=".4">
+        <GradientStop Color="Black" Offset="0"/>
+        <GradientStop Color="LightGray" Offset=".5"/>
+        <GradientStop Color="Black" Offset="1"/>
+      </LinearGradientBrush>
+
+      <LinearGradientBrush x:Key="BUTTON_GLASS_BACKGROUND_HoverGradient" StartPoint="0 0" EndPoint="0 1" Opacity=".8">
+        <GradientStop Color="Black" Offset="0"/>
+        <GradientStop Color="White" Offset=".5"/>
+        <GradientStop Color="Black" Offset="1"/>
+      </LinearGradientBrush>
+    </ResourceDictionary>
+  </Application.Resources>
+</Application>

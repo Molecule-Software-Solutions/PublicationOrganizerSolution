@@ -5,8 +5,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Costura.Fody" Version="4.1.0" />
+    <PackageReference Include="itext7" Version="7.1.11" />
     <PackageReference Include="Microsoft.Data.Sqlite" Version="3.1.4" />
     <PackageReference Include="PropertyChanged.Fody" Version="3.2.8" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="ReportGenerator">
+      <HintPath>..\..\..\Desktop\Application Development\PDF_Column_Report_Generator\ReportGenerator\bin\Release\netcoreapp3.1\ReportGenerator.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
   </ItemGroup>
 
 </Project>

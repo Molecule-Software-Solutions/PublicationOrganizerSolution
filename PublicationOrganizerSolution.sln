@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30104.148
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PublicationOrganizerUI", "PublicationOrganizerUI\PublicationOrganizerUI.csproj", "{EE6A0577-744B-4414-93AE-287789B5D2A2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PublicationOrganizerUI", "PublicationOrganizerUI\PublicationOrganizerUI.csproj", "{EE6A0577-744B-4414-93AE-287789B5D2A2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PublicationOrganizer.Core", "PublicationOrganizer.Core\PublicationOrganizer.Core.csproj", "{E5741A21-5409-43EB-9FBA-DBD62BB1710B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PublicationOrganizer.Core", "PublicationOrganizer.Core\PublicationOrganizer.Core.csproj", "{E5741A21-5409-43EB-9FBA-DBD62BB1710B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

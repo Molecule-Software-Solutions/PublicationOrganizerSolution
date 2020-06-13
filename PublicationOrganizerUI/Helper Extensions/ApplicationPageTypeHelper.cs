@@ -16,7 +16,7 @@ namespace PublicationOrganizerUI
             switch (page)
             {
                 case PageTypes.MainPage:
-                    return new MainPage(); 
+                    return new MainPage();
                 case PageTypes.AdministrationPage:
                     return new Page(); 
                 default:

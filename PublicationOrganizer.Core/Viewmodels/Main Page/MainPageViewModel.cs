@@ -264,6 +264,14 @@ namespace PublicationOrganizer.Core
             ResetSearchSystem(); 
         });
 
+        /// <summary>
+        /// Opens the Publication Report for viewing
+        /// </summary>
+        public RelayCommand GenerateReport_COMMAND => new RelayCommand(() =>
+        {
+            StaticViewmodelController.ApplicationViewModel.CallPDFEngine(PublicationReportEngine.GenerateReport(PublicationList)); 
+        });
+
         #endregion 
     }
 }

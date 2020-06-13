@@ -30,6 +30,11 @@ namespace PublicationOrganizer.Core
         /// </summary>
         public StandardDialogViewModel StandardMessageDialogViewModel { get; set; }
 
+        /// <summary>
+        /// Path to a generated PDF file
+        /// </summary>
+        public string PDFViewerFilePath { get; set; }
+
         #endregion
 
         #region Private Methods 
@@ -66,6 +71,23 @@ namespace PublicationOrganizer.Core
             StandardMessageDialogViewModel = new StandardDialogViewModel(header, message);
         }
 
+        /// <summary>
+        /// Method that calls the PDF engine window to appear 
+        /// </summary>
+        /// <param name="fileLocation"></param>
+        public void CallPDFEngine(string fileLocation)
+        {
+            if(!string.IsNullOrEmpty(fileLocation))
+            {
+                PDFViewerFilePath = fileLocation;
+                PDFViewerCalled.Invoke(this, EventArgs.Empty); 
+            }
+            else
+            {
+                CreateMessageDialog("Error opening PDF page", "The PDF page could not be opened"); 
+            }
+        }
+
         #endregion
 
         #region Commands 
@@ -83,7 +105,8 @@ namespace PublicationOrganizer.Core
 
         #region Public Events 
 
-        public event EventHandler WindowChromeDoubleClickResizeCalled = (sender, e) => { }; 
+        public event EventHandler WindowChromeDoubleClickResizeCalled = (sender, e) => { };
+        public event EventHandler PDFViewerCalled = (sender, e) => { };
 
         #endregion 
     }

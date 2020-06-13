@@ -1,0 +1,515 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1000</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Publication Organizer</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">#centralwidget{
+	background-color: rgb(40, 40, 40);
+	border: solid;
+	border-width: 2px; 
+	border-radius: 10px;
+	border-color: qlineargradient(spread:pad, x1:0.0240385, y1:0.54, x2:1, y2:0.551, stop:0 rgba(156, 156, 156, 255), stop:0.153846 rgba(104, 104, 104, 255), stop:0.360577 rgba(187, 187, 187, 255), stop:0.725962 rgba(105, 105, 105, 255), stop:0.942308 rgba(132, 132, 132, 255));
+}
+
+#ProgramLabel {
+color: white; 
+}
+
+QPushButton{
+	color: white; 
+	border: solid;
+	border-width: 2px; 
+	border-radius: 10px;
+	border-color: qlineargradient(spread:pad, x1:0.0240385, y1:0.54, x2:1, y2:0.551, stop:0 rgba(156, 156, 156, 255), stop:0.153846 rgba(104, 104, 104, 255), stop:0.360577 rgba(187, 187, 187, 255), stop:0.725962 rgba(105, 105, 105, 255), stop:0.942308 rgba(132, 132, 132, 255));
+	background-color: qlineargradient(spread:pad, x1:0.476, y1:0, x2:0.471, y2:1, stop:0.144231 rgba(41, 41, 41, 255), stop:0.389423 rgba(77, 77, 77, 255), stop:0.951923 rgba(16, 16, 16, 255));
+}
+
+#MainWindow {
+	
+	background-color: rgb(47, 47, 47);
+}
+
+#SearchFrame {
+
+}
+
+#PublicationTable {
+border: solid; 
+
+	border-color: qlineargradient(spread:pad, x1:0.0240385, y1:0.54, x2:1, y2:0.551, stop:0 rgba(156, 156, 156, 255), stop:0.153846 rgba(104, 104, 104, 255), stop:0.360577 rgba(187, 187, 187, 255), stop:0.725962 rgba(105, 105, 105, 255), stop:0.942308 rgba(132, 132, 132, 255));
+		
+	background-color: qlineargradient(spread:pad, x1:0, y1:0.522273, x2:1, y2:0.614, stop:0 rgba(0, 0, 0, 255), stop:0.25 rgba(59, 59, 59, 255), stop:0.456731 rgba(0, 0, 0, 255), stop:0.697115 rgba(61, 61, 61, 255), stop:1 rgba(0, 0, 0, 255));
+
+border-width: 2px; 
+border-radius: 10px;
+
+}
+
+#ButtonFrame , #SearchFrame, #SearchBoxTitleFrame {
+border: solid; 
+	background-color: qlineargradient(spread:pad, x1:0, y1:0.522273, x2:1, y2:0.614, stop:0 rgba(0, 0, 0, 255), stop:0.25 rgba(59, 59, 59, 255), stop:0.456731 rgba(0, 0, 0, 255), stop:0.697115 rgba(61, 61, 61, 255), stop:1 rgba(0, 0, 0, 255));
+border-width: 2px; 
+border-radius: 10px;
+	border-color: qlineargradient(spread:pad, x1:0.0240385, y1:0.54, x2:1, y2:0.551, stop:0 rgba(156, 156, 156, 255), stop:0.153846 rgba(104, 104, 104, 255), stop:0.360577 rgba(187, 187, 187, 255), stop:0.725962 rgba(105, 105, 105, 255), stop:0.942308 rgba(132, 132, 132, 255));
+}
+</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <property name="leftMargin">
+     <number>5</number>
+    </property>
+    <property name="topMargin">
+     <number>3</number>
+    </property>
+    <property name="rightMargin">
+     <number>5</number>
+    </property>
+    <property name="bottomMargin">
+     <number>5</number>
+    </property>
+    <property name="spacing">
+     <number>5</number>
+    </property>
+    <item row="1" column="0">
+     <widget class="QStackedWidget" name="stackedWidget">
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="MasterLayer">
+       <layout class="QGridLayout" name="gridLayout_4" rowstretch="0,1,0">
+        <item row="2" column="0">
+         <widget class="QFrame" name="SearchFrame">
+          <property name="frameShape">
+           <enum>QFrame::StyledPanel</enum>
+          </property>
+          <property name="frameShadow">
+           <enum>QFrame::Raised</enum>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_7">
+           <item row="1" column="1">
+            <widget class="QLineEdit" name="SearchString_TB">
+             <property name="styleSheet">
+              <string notr="true">#SearchString_TB {
+	background-color: rgb(47, 47, 47);
+}</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="2">
+            <widget class="QPushButton" name="Search_BTN">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>150</width>
+               <height>40</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>150</width>
+               <height>40</height>
+              </size>
+             </property>
+             <property name="font">
+              <font>
+               <family>Arial</family>
+               <pointsize>10</pointsize>
+               <weight>75</weight>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="text">
+              <string>Search</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="3">
+            <widget class="QPushButton" name="ResetSearch_BTN">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>150</width>
+               <height>40</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>150</width>
+               <height>40</height>
+              </size>
+             </property>
+             <property name="font">
+              <font>
+               <family>Arial</family>
+               <pointsize>10</pointsize>
+               <weight>75</weight>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="text">
+              <string>Reset</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <widget class="QComboBox" name="SearchType_CB"/>
+           </item>
+           <item row="0" column="0" colspan="4">
+            <widget class="QFrame" name="SearchBoxTitleFrame">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>0</height>
+              </size>
+             </property>
+             <property name="frameShape">
+              <enum>QFrame::StyledPanel</enum>
+             </property>
+             <property name="frameShadow">
+              <enum>QFrame::Raised</enum>
+             </property>
+             <layout class="QGridLayout" name="gridLayout_8">
+              <property name="leftMargin">
+               <number>0</number>
+              </property>
+              <property name="topMargin">
+               <number>0</number>
+              </property>
+              <property name="rightMargin">
+               <number>0</number>
+              </property>
+              <property name="bottomMargin">
+               <number>0</number>
+              </property>
+              <item row="0" column="0">
+               <widget class="QLabel" name="SearchPublications_LBL">
+                <property name="font">
+                 <font>
+                  <family>Arial</family>
+                  <pointsize>12</pointsize>
+                  <weight>75</weight>
+                  <bold>true</bold>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">#SearchPublications_LBL {
+color: white; 
+
+}</string>
+                </property>
+                <property name="text">
+                 <string>Search Publications</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignCenter</set>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="0" column="0">
+         <widget class="QFrame" name="ButtonFrame">
+          <property name="styleSheet">
+           <string notr="true">QLabel {
+color: white; 
+}</string>
+          </property>
+          <property name="frameShape">
+           <enum>QFrame::StyledPanel</enum>
+          </property>
+          <property name="frameShadow">
+           <enum>QFrame::Raised</enum>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_6" columnstretch="0,0,0,0">
+           <item row="0" column="2">
+            <widget class="QPushButton" name="EditPublication_BTN">
+             <property name="minimumSize">
+              <size>
+               <width>175</width>
+               <height>40</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>175</width>
+               <height>40</height>
+              </size>
+             </property>
+             <property name="text">
+              <string>PushButton</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="0">
+            <widget class="AnimatedBackgroundButton" name="AddPublication_BTN">
+             <property name="minimumSize">
+              <size>
+               <width>175</width>
+               <height>40</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>175</width>
+               <height>40</height>
+              </size>
+             </property>
+             <property name="text">
+              <string>PushButton</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QPushButton" name="DeletePublication_BTN">
+             <property name="minimumSize">
+              <size>
+               <width>175</width>
+               <height>40</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>175</width>
+               <height>40</height>
+              </size>
+             </property>
+             <property name="text">
+              <string>PushButton</string>
+             </property>
+             <property name="gradient_top" stdset="0">
+              <color>
+               <red>85</red>
+               <green>170</green>
+               <blue>0</blue>
+              </color>
+             </property>
+             <property name="gradient_bottom" stdset="0">
+              <color>
+               <red>0</red>
+               <green>85</green>
+               <blue>0</blue>
+              </color>
+             </property>
+             <property name="gradient_highlight" stdset="0">
+              <color>
+               <red>235</red>
+               <green>255</green>
+               <blue>143</blue>
+              </color>
+             </property>
+             <property name="gradient_middle" stdset="0">
+              <color>
+               <red>18</red>
+               <green>135</green>
+               <blue>90</blue>
+              </color>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="3">
+            <widget class="QQuickWidget" name="SpecialButtonTest">
+             <property name="minimumSize">
+              <size>
+               <width>175</width>
+               <height>40</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>175</width>
+               <height>40</height>
+              </size>
+             </property>
+             <property name="baseSize">
+              <size>
+               <width>175</width>
+               <height>40</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true"/>
+             </property>
+             <property name="resizeMode">
+              <enum>QQuickWidget::SizeRootObjectToView</enum>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QFrame" name="DataFrame">
+          <property name="frameShape">
+           <enum>QFrame::StyledPanel</enum>
+          </property>
+          <property name="frameShadow">
+           <enum>QFrame::Raised</enum>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_2">
+           <property name="leftMargin">
+            <number>0</number>
+           </property>
+           <property name="topMargin">
+            <number>0</number>
+           </property>
+           <property name="rightMargin">
+            <number>0</number>
+           </property>
+           <property name="bottomMargin">
+            <number>0</number>
+           </property>
+           <item row="0" column="0">
+            <widget class="QTableView" name="PublicationTable">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="DialogLayer">
+       <layout class="QGridLayout" name="gridLayout_3"/>
+      </widget>
+      <widget class="QWidget" name="OverlayLayer">
+       <layout class="QGridLayout" name="gridLayout_5"/>
+      </widget>
+     </widget>
+    </item>
+    <item row="0" column="0">
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <property name="leftMargin">
+       <number>10</number>
+      </property>
+      <property name="topMargin">
+       <number>0</number>
+      </property>
+      <item>
+       <widget class="QLabel" name="ProgramLabel">
+        <property name="font">
+         <font>
+          <family>Arial</family>
+          <pointsize>10</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>Publication Organizer</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="MinimizeButton">
+        <property name="minimumSize">
+         <size>
+          <width>50</width>
+          <height>30</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>50</width>
+          <height>30</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>PushButton</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="SizeButton">
+        <property name="minimumSize">
+         <size>
+          <width>50</width>
+          <height>30</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>50</width>
+          <height>30</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>PushButton</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="ExitButton">
+        <property name="minimumSize">
+         <size>
+          <width>50</width>
+          <height>30</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>50</width>
+          <height>30</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>PushButton</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QQuickWidget</class>
+   <extends>QWidget</extends>
+   <header location="global">QtQuickWidgets/QQuickWidget</header>
+  </customwidget>
+  <customwidget>
+   <class>AnimatedBackgroundButton</class>
+   <extends>QPushButton</extends>
+   <header>animatedbackgroundbutton.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

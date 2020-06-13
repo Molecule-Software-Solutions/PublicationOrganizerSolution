@@ -32,14 +32,15 @@
                     <ColumnDefinition/>
                     <ColumnDefinition/>
                     <ColumnDefinition/>
+                    <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
 
                 <!--Add New Button-->
                 <Rectangle Opacity=".5" Panel.ZIndex="0" Grid.Column="0" Grid.ColumnSpan="3"/>
-                <Button Style="{StaticResource BUTTON_STYLE_ArtDeco}" Background="DarkGreen" Grid.Column="0" Width="160" Content="Add New" FontWeight="Bold" Foreground="White" FontSize="16" Command="{Binding ShowAddNewPublication_COMMAND, UpdateSourceTrigger=PropertyChanged}"/>
-                <Button Grid.Column="1" Width="160"  Content="Delete Selected" FontWeight="Bold" Foreground="White" Background="DarkRed" FontSize="16" Command="{Binding DeleteSelectedPublication_COMMAND, UpdateSourceTrigger=PropertyChanged}" Style="{DynamicResource BUTTON_STYLE_ArtDeco}"/>
-                <Button Grid.Column="2" Width="160" Content="Edit Selected" FontWeight="Bold" Foreground="White" Background="DarkBlue" FontSize="16" Command="{Binding ShowPublicationEditPanel_COMMAND, UpdateSourceTrigger=PropertyChanged}" Style="{DynamicResource BUTTON_STYLE_ArtDeco}"/>
-
+                <Button Style="{StaticResource BUTTON_STYLE_ArtDeco}" Background="DarkOliveGreen" Grid.Column="0" Width="150" Content="Add New" FontWeight="Bold" Foreground="White" FontSize="16" Command="{Binding ShowAddNewPublication_COMMAND, UpdateSourceTrigger=PropertyChanged}"/>
+                <Button Grid.Column="1" Width="150"  Content="Delete Selected" FontWeight="Bold" Foreground="White" Background="DarkRed" FontSize="16" Command="{Binding DeleteSelectedPublication_COMMAND, UpdateSourceTrigger=PropertyChanged}" Style="{DynamicResource BUTTON_STYLE_ArtDeco}"/>
+                <Button Grid.Column="2" Width="150" Content="Edit Selected" FontWeight="Bold" Foreground="White" Background="DarkCyan" FontSize="16" Command="{Binding ShowPublicationEditPanel_COMMAND, UpdateSourceTrigger=PropertyChanged}" Style="{DynamicResource BUTTON_STYLE_ArtDeco}"/>
+                <Button Style="{StaticResource BUTTON_STYLE_ArtDeco}" Grid.Column="3" Width="150" Content="Print Report" Background="DarkGoldenrod" Foreground="White" FontWeight="Bold" FontSize="16" Command="{Binding GenerateReport_COMMAND, UpdateSourceTrigger=PropertyChanged}"/> 
             </Grid>
         </Border>
 
@@ -98,8 +99,8 @@
                         <ComboBoxItem Content="Summary"/>
                     </ComboBox>
                     <TextBox x:Name="SearchTextBox" Margin="10 5 0 5" Background="DimGray" Width="200" VerticalAlignment="Center" FontSize="16" FontWeight="DemiBold" Foreground="White" Text="{Binding SearchString, UpdateSourceTrigger=PropertyChanged}" KeyDown="SearchTextBox_KeyDown"/>
-                    <Button Margin="10 0 0 0" Content="Search" Width="150" Height="30" Background="DarkGreen" Foreground="White" Command="{Binding PerformSearch_COMMAND, UpdateSourceTrigger=PropertyChanged}" Style="{DynamicResource BUTTON_STYLE_ArtDeco}"/>
-                    <Button Margin="10 0 0 0" Content="Reset" Width="150" Height="30" Background="Purple" Foreground="White" Command="{Binding ResetSearch_COMMAND, UpdateSourceTrigger=PropertyChanged}" Style="{DynamicResource BUTTON_STYLE_ArtDeco}"/>
+                    <Button Margin="10 0 0 0" Content="Search" Width="150" Height="30" Background="DarkBlue" Foreground="White" Command="{Binding PerformSearch_COMMAND, UpdateSourceTrigger=PropertyChanged}" Style="{DynamicResource BUTTON_STYLE_ArtDeco}"/>
+                    <Button Margin="10 0 0 0" Content="Reset" Width="150" Height="30" Background="Black" Foreground="White" Command="{Binding ResetSearch_COMMAND, UpdateSourceTrigger=PropertyChanged}" Style="{DynamicResource BUTTON_STYLE_ArtDeco}"/>
                 </StackPanel>
             </Grid>
 

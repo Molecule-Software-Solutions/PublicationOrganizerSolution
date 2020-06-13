@@ -76,6 +76,13 @@ namespace PublicationOrganizerUI
         {
             ViewModel.PropertyChanged += ViewModel_PropertyChanged;
             ViewModel.WindowChromeDoubleClickResizeCalled += ViewModel_WindowChromeDoubleClickResizeCalled;
+            ViewModel.PDFViewerCalled += ViewModel_PDFViewerCalled;
+        }
+
+        private void ViewModel_PDFViewerCalled(object sender, EventArgs e)
+        {
+            PDFViewerWindow viewerWindow = new PDFViewerWindow();
+            viewerWindow.Show(); 
         }
 
         #region Event Handlers

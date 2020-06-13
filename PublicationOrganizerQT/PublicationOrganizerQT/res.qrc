@@ -1,0 +1,11 @@
+<RCC>
+    <qresource prefix="/">
+        <file>SpecialButtonWidget.qml</file>
+        <file>GradientAbleBorder.qml</file>
+        <file>GreenButton.qml</file>
+        <file>RedButton.qml</file>
+        <file>BlueButton.qml</file>
+        <file>BlackButton.qml</file>
+        <file>YellowButton.qml</file>
+    </qresource>
+</RCC>
