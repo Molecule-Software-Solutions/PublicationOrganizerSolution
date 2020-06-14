@@ -7,22 +7,25 @@ Item {
     // Component mouse area
     MouseArea {
         propagateComposedEvents: true
+        hoverEnabled: true
         anchors.fill: parent
         anchors.margins: 5
-        onClicked:
+        onPressed:
         {
             root.state = "CLICKED"
-            console.log("Clicked")
         }
+        onReleased:
+        {
+            root.state = "RELEASED"
+        }
+
         onEntered:
         {
             root.state = "HOVERING"
-            console.log("Hovering")
         }
         onExited:
         {
             root.state = "EXITED"
-            console.log("Exited")
         }
     }
 
@@ -53,6 +56,16 @@ Item {
                 backgroundGradient2: "#d0db57"
                 backgroundGradient3: "#456515"
                 backgroundGradient4: "#10472a"
+            }
+        },
+        State {
+            name: "RELEASED"
+            PropertyChanges {
+                target: specialButtonRoot
+                backgroundGradient1: "#242424"
+                backgroundGradient2: "#787878"
+                backgroundGradient3: "#404040"
+                backgroundGradient4: "#242424"
             }
         },
         State {
@@ -91,6 +104,15 @@ Item {
 
         Transition {
             to: "EXITED"
+
+            ColorAnimation {
+                target: specialButtonRoot
+                duration: 150
+            }
+        },
+
+        Transition {
+            to: "RELEASED"
 
             ColorAnimation {
                 target: specialButtonRoot

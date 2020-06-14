@@ -1,28 +1,32 @@
 import QtQuick 2.0
 
 Item {
+
     id: root
     state: "EXITED"
 
     // Component mouse area
     MouseArea {
         propagateComposedEvents: true
+        hoverEnabled: true
         anchors.fill: parent
         anchors.margins: 5
-        onClicked:
+        onPressed:
         {
             root.state = "CLICKED"
-            console.log("Clicked")
         }
+        onReleased:
+        {
+            root.state = "RELEASED"
+        }
+
         onEntered:
         {
             root.state = "HOVERING"
-            console.log("Hovering")
         }
         onExited:
         {
             root.state = "EXITED"
-            console.log("Exited")
         }
     }
 
@@ -49,25 +53,33 @@ Item {
             name: "CLICKED"
             PropertyChanges {
                 target: specialButtonRoot
-                backgroundGradient1: "#166932"
+                backgroundGradient1: "#9db9c8"
                 backgroundGradient2: "#d0db57"
                 backgroundGradient3: "#456515"
                 backgroundGradient4: "#10472a"
             }
         },
         State {
+          name: "RELEASED"
+          PropertyChanges {
+              target: specialButtonRoot
+              backgroundGradient1: "#166932"
+              backgroundGradient2: "#70a423"
+              backgroundGradient3: "#456515"
+              backgroundGradient4: "#10472a"
+          }
+        },
+
+        State {
             name: "HOVERING"
             PropertyChanges {
                 target: specialButtonRoot
-                backgroundGradient1: "#9db9c8"
+                backgroundGradient1: "#166932"
                 backgroundGradient2: "#d0db57"
                 backgroundGradient3: "#456515"
                 backgroundGradient4: "#10472a"
-
             }
         }
-
-
     ]
 
     transitions: [
@@ -77,6 +89,7 @@ Item {
             ColorAnimation {
                 target: specialButtonRoot
                 duration: 150
+                loops: 1
             }
         },
 
@@ -96,7 +109,14 @@ Item {
                 target: specialButtonRoot
                 duration: 150
             }
-        }
+        },
+        Transition {
+            to: "RELEASED"
 
+            ColorAnimation {
+                target: specialButtonRoot
+                duration: 150
+            }
+        }
     ]
 }

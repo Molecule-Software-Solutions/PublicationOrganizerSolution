@@ -17,7 +17,10 @@ MainMenu::~MainMenu()
 
 bool MainMenu::eventFilter(QObject *watched, QEvent *event)
 {
+    QMouseEvent* mouse_event = static_cast<QMouseEvent*>(event);
     // Converts the event to mouse events if necessary
+    if(watched == ui->Close_BTN) {
+    }
 
     return false;
 }
