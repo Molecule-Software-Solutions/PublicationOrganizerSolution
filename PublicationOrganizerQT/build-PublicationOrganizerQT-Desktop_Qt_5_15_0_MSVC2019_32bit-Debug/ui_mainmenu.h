@@ -122,6 +122,15 @@ public:
 "border: none;\n"
 "background-color: transparent;\n"
 "\n"
+"}\n"
+"\n"
+"#ButtonSection {\n"
+"background-color: qlineargradient(spread:pad, x1:0, y1:0.522273, x2:1, y2:0.614, stop:0 rgba(0, 0, 0, 255), stop:0.25 rgba(59, 59, 59, 255), stop:0.456731 rgba(0, 0, 0, 255), stop:0.697115 rgba(61, 61, 61, 255), stop:1 rgba(0, 0, 0, 255));\n"
+"border: solid;\n"
+"border-width: 2;\n"
+"border-radius: 10;\n"
+"border-color: qlineargradient(spread:pad, x1:0.0240385, y1:0.54, x2:1, y2:0.551, stop:0 rgba(156, 156, 156, 255), stop:0.153846 rgba(104, 104, 104, 255), stop:0.360577 rgba(187, 187, 187, 255), stop:0.725962 rgba(105, 105, 105, 255), stop:0.942308 rgba(132, 132, 132, 255));\n"
+"margin: 5;\n"
 "}"));
         ApplicationControlFrame->setFrameShape(QFrame::StyledPanel);
         ApplicationControlFrame->setFrameShadow(QFrame::Raised);
@@ -160,24 +169,24 @@ public:
 
         Minimize_BTN = new QQuickWidget(TitleSection);
         Minimize_BTN->setObjectName(QString::fromUtf8("Minimize_BTN"));
-        Minimize_BTN->setMinimumSize(QSize(22, 22));
-        Minimize_BTN->setMaximumSize(QSize(22, 22));
+        Minimize_BTN->setMinimumSize(QSize(35, 22));
+        Minimize_BTN->setMaximumSize(QSize(35, 22));
         Minimize_BTN->setResizeMode(QQuickWidget::SizeRootObjectToView);
 
         gridLayout_4->addWidget(Minimize_BTN, 0, 2, 1, 1);
 
         MaximizeRestore_BTN = new QQuickWidget(TitleSection);
         MaximizeRestore_BTN->setObjectName(QString::fromUtf8("MaximizeRestore_BTN"));
-        MaximizeRestore_BTN->setMinimumSize(QSize(22, 22));
-        MaximizeRestore_BTN->setMaximumSize(QSize(22, 22));
+        MaximizeRestore_BTN->setMinimumSize(QSize(35, 22));
+        MaximizeRestore_BTN->setMaximumSize(QSize(35, 22));
         MaximizeRestore_BTN->setResizeMode(QQuickWidget::SizeRootObjectToView);
 
         gridLayout_4->addWidget(MaximizeRestore_BTN, 0, 3, 1, 1);
 
         Close_BTN = new QQuickWidget(TitleSection);
         Close_BTN->setObjectName(QString::fromUtf8("Close_BTN"));
-        Close_BTN->setMinimumSize(QSize(22, 22));
-        Close_BTN->setMaximumSize(QSize(22, 22));
+        Close_BTN->setMinimumSize(QSize(35, 22));
+        Close_BTN->setMaximumSize(QSize(35, 22));
         Close_BTN->setResizeMode(QQuickWidget::SizeRootObjectToView);
 
         gridLayout_4->addWidget(Close_BTN, 0, 4, 1, 1);

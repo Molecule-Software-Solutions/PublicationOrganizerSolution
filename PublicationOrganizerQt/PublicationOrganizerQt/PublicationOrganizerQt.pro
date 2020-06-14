@@ -1,4 +1,4 @@
-QT       += core gui quickwidgets
+QT       += core gui quickwidgets sql
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -17,30 +17,36 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     animatedbackgroundbutton.cpp \
+    databaseengine.cpp \
     graphicshelper.cpp \
     main.cpp \
     mainmenu.cpp \
-    mainwindow.cpp \
+    publicationorganizerdialog.cpp \
     pushbuttonanimation.cpp
 
 HEADERS += \
     animatedbackgroundbutton.h \
+    databaseengine.h \
     graphicshelper.h \
     mainmenu.h \
-    mainwindow.h \
+    publicationorganizerdialog.h \
     pushbuttonanimation.h
 
 FORMS += \
     animatedbackgroundbutton.ui \
     mainmenu.ui \
-    mainwindow.ui
+    publicationorganizerdialog.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
-DISTFILES +=
+DISTFILES += \
+    SQLite/Windows/sqlite3.def \
+    SQLite/Windows/sqlite3.def \
+    SQLite/Windows/sqlite3.dll \
+    SQLite/Windows/sqlite3.dll
 
 RESOURCES += \
     res.qrc

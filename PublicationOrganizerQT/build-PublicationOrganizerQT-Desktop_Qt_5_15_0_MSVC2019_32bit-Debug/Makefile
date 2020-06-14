@@ -281,6 +281,7 @@ Makefile: ..\..\PublicationOrganizerQt\PublicationOrganizerQt\PublicationOrganiz
 		C:\Qt\5.15.0\msvc2019\lib\Qt5QmlModels.prl \
 		C:\Qt\5.15.0\msvc2019\lib\Qt5Qml.prl \
 		C:\Qt\5.15.0\msvc2019\lib\Qt5Network.prl \
+		C:\Qt\5.15.0\msvc2019\lib\Qt5Sql.prl \
 		C:\Qt\5.15.0\msvc2019\lib\Qt5Core.prl \
 		C:\Qt\5.15.0\msvc2019\lib\qtmain.prl \
 		C:\Qt\5.15.0\msvc2019\mkspecs\features\build_pass.prf \
@@ -292,6 +293,7 @@ Makefile: ..\..\PublicationOrganizerQt\PublicationOrganizerQt\PublicationOrganiz
 		C:\Qt\5.15.0\msvc2019\lib\Qt5QmlModelsd.prl \
 		C:\Qt\5.15.0\msvc2019\lib\Qt5Qmld.prl \
 		C:\Qt\5.15.0\msvc2019\lib\Qt5Networkd.prl \
+		C:\Qt\5.15.0\msvc2019\lib\Qt5Sqld.prl \
 		C:\Qt\5.15.0\msvc2019\lib\Qt5Cored.prl \
 		C:\Qt\5.15.0\msvc2019\lib\qtmaind.prl
 	$(QMAKE) -o Makefile ..\..\PublicationOrganizerQt\PublicationOrganizerQt\PublicationOrganizerQt.pro -spec win32-msvc "CONFIG+=debug" "CONFIG+=qml_debug"
@@ -492,6 +494,7 @@ C:\Qt\5.15.0\msvc2019\lib\Qt5Gui.prl:
 C:\Qt\5.15.0\msvc2019\lib\Qt5QmlModels.prl:
 C:\Qt\5.15.0\msvc2019\lib\Qt5Qml.prl:
 C:\Qt\5.15.0\msvc2019\lib\Qt5Network.prl:
+C:\Qt\5.15.0\msvc2019\lib\Qt5Sql.prl:
 C:\Qt\5.15.0\msvc2019\lib\Qt5Core.prl:
 C:\Qt\5.15.0\msvc2019\lib\qtmain.prl:
 C:\Qt\5.15.0\msvc2019\mkspecs\features\build_pass.prf:
@@ -503,6 +506,7 @@ C:\Qt\5.15.0\msvc2019\lib\Qt5Guid.prl:
 C:\Qt\5.15.0\msvc2019\lib\Qt5QmlModelsd.prl:
 C:\Qt\5.15.0\msvc2019\lib\Qt5Qmld.prl:
 C:\Qt\5.15.0\msvc2019\lib\Qt5Networkd.prl:
+C:\Qt\5.15.0\msvc2019\lib\Qt5Sqld.prl:
 C:\Qt\5.15.0\msvc2019\lib\Qt5Cored.prl:
 C:\Qt\5.15.0\msvc2019\lib\qtmaind.prl:
 qmake: FORCE

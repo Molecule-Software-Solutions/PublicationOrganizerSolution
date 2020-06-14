@@ -4,6 +4,15 @@ Item {
 
     id: root
     state: "EXITED"
+    onEnabledChanged: {
+        if(!enabled)
+        {
+            state: "DISABLED"
+        }
+        else {
+            state: "EXITED"
+        }
+    }
 
     // Component mouse area
     MouseArea {
@@ -39,6 +48,16 @@ Item {
 
 
     states: [
+        State {
+            name: "DISABLED"
+            PropertyChanges {
+                target: specialButtonRoot
+                backgroundGradient1: "#b3b3b3"
+                backgroundGradient2: "#b3b3b3"
+                backgroundGradient3: "#b3b3b3"
+                backgroundGradient4: "#b3b3b3"
+            }
+        },
         State {
             name: "EXITED"
             PropertyChanges {

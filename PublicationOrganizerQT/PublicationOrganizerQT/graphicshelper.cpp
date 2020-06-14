@@ -12,8 +12,7 @@ GraphicsHelper::GraphicsHelper()
 // result in a memory leak
 QGraphicsDropShadowEffect* GraphicsHelper::ReturnNewDropShadowEffect()
 {
-    QGraphicsDropShadowEffect* retEffect =
-            new QGraphicsDropShadowEffect();
+    QGraphicsDropShadowEffect* retEffect = new QGraphicsDropShadowEffect();
     retEffect->setXOffset(0);
     retEffect->setYOffset(2);
     retEffect->setColor(QColor(0,0,0));

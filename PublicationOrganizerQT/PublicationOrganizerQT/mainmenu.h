@@ -2,6 +2,11 @@
 #define MAINMENU_H
 
 #include <QWidget>
+#include <QMainWindow>
+#include <QQuickWidget>
+#include "graphicshelper.h"
+#include <QGraphicsEffect>
+#include "publicationorganizerdialog.h"
 
 namespace Ui {
 class MainMenu;
@@ -12,14 +17,29 @@ class MainMenu : public QWidget
     Q_OBJECT
 
 public:
+    enum ButtonStyles{
+        Black,
+        Blue,
+        Green,
+        Red,
+        Yellow
+    };
+
     explicit MainMenu(QWidget *parent = nullptr);
+
+    PublicationOrganizerDialog dialog;
     void SetupUIComponents();
-    bool eventFilter(QObject *watched, QEvent *event);
+
     // Destructor
     ~MainMenu();
 
 private:
     Ui::MainMenu *ui;
+    void InstallEventFilters();
+    void SetUpButton(QQuickWidget* buttonPtr, ButtonStyles style, QString text, qreal fontSize, bool transparency);
+    void SetupGraphicsEffects();
+    bool eventFilter(QObject *watched, QEvent *event);
+
 };
 
 #endif // MAINMENU_H
