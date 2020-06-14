@@ -7,6 +7,10 @@ Please contact me at *joshman1019@gmail.com* for inquires
 ## Purpose
 The purpose of this application is to provide an easy management facility for organizing a collection of publications (magazines, newspapers, etc.).
 
+## 1.4.0 Update Resource Requirement
+### You may download the DLL for the PDF report engine from https://github.com/joshman1019/PDF-Report-Generator
+### You may also clone the project and build the DLL from source by cloning the above referenced project
+
 ## Use
 ### To add a new publication
 * click the **Add New** button on the main control strip.
