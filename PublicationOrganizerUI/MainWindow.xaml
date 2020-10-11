@@ -8,6 +8,7 @@
         WindowStyle="None"
         AllowsTransparency="True"
         Background="Transparent"
+        ResizeMode="CanResizeWithGrip"
         WindowStartupLocation="CenterScreen"
         
         Title="Publication Organizer" Height="600" Width="1000">
