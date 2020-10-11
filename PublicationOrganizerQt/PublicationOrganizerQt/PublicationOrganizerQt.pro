@@ -25,6 +25,7 @@ SOURCES += \
     pushbuttonanimation.cpp
 
 HEADERS += \
+    Publication.h \
     animatedbackgroundbutton.h \
     databaseengine.h \
     graphicshelper.h \

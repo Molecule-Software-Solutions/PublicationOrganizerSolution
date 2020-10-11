@@ -2,6 +2,7 @@
 #include "ui_mainmenu.h"
 #include <QQmlContext>
 #include <QGraphicsDropShadowEffect>
+#include "databaseengine.h"
 
 MainMenu::MainMenu(QWidget *parent) :
     QWidget(parent),
@@ -10,6 +11,7 @@ MainMenu::MainMenu(QWidget *parent) :
     ui->setupUi(this);
     SetupUIComponents();
     InstallEventFilters();
+    SetupDatagridWidget();
 }
 
 MainMenu::~MainMenu()
@@ -28,7 +30,8 @@ bool MainMenu::eventFilter(QObject *watched, QEvent *event)
         if(mouse_event->button() == Qt::MouseButton::LeftButton &&
                 mouse_event->type() == QEvent::MouseButtonPress)
         {
-
+            // Creates the local database if one does not already exist
+            CreateDatabaseIfNoneExists();
             return true;
         }
     }
@@ -64,9 +67,7 @@ bool MainMenu::eventFilter(QObject *watched, QEvent *event)
         if(mouse_event->button() == Qt::MouseButton::LeftButton &&
                 mouse_event->type() == QEvent::MouseButtonPress)
         {
-            dialog.SetMessage("Test Title", "This is a really long message: the quick brown fox jumped over the lazy dog, Humpty dumpty sat on a wall, humpty dumpty had a great fall, all the kings horses and all of the kings men, couldnt put humpty together again!");
-            dialog.show();
-            return true;
+
         }
     }
     if(watched == ui->ResetSearch_BTN)
@@ -193,4 +194,27 @@ void MainMenu::SetUpButton(QQuickWidget* button, ButtonStyles style, QString tex
 void MainMenu::SetupGraphicsEffects()
 {
     ui->ButtonSection->setGraphicsEffect(GraphicsHelper::ReturnNewDropShadowEffect());
+}
+
+void MainMenu::CreateDatabaseIfNoneExists()
+{
+    DatabaseEngine de = DatabaseEngine();
+    if(de.ReturnDatabase().open())
+    {
+        dialog.SetMessage("Database Opened Successfully", "The database was set successfully");
+        dialog.show();
+    }
+    else {
+        dialog.SetMessage("Error", "the database could not be opened");
+        dialog.show();
+    }
+}
+
+void MainMenu::SetupDatagridWidget()
+{
+    ui->tableWidget->insertColumn(0);
+    ui->tableWidget->insertColumn(1);
+    ui->tableWidget->insertColumn(2);
+    ui->tableWidget->insertColumn(3);
+    ui->tableWidget->setHorizontalHeaderLabels({"Publication Name", "Publication Date", "End of Publication Range", "Location"});
 }

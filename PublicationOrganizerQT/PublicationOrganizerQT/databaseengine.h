@@ -8,12 +8,10 @@
 class DatabaseEngine
 {
 public:
-    PublicationOrganizerDialog dialog;
     DatabaseEngine();
     ~DatabaseEngine();
-
-    // Public Functions
-    void CreateDatabase();
+    // Public Members
+    QSqlDatabase ReturnDatabase();
 };
 
 #endif // DATABASEENGINE_H

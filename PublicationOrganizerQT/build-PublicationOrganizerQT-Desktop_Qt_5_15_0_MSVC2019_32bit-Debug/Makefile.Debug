@@ -859,7 +859,14 @@ debug\databaseengine.obj: ..\..\PublicationOrganizerQt\PublicationOrganizerQt\da
 		C:\Qt\5.15.0\msvc2019\include\QtCore\qfile.h \
 		C:\Qt\5.15.0\msvc2019\include\QtCore\qfiledevice.h \
 		C:\Qt\5.15.0\msvc2019\include\QtGui\qvector2d.h \
-		C:\Qt\5.15.0\msvc2019\include\QtGui\qtouchdevice.h
+		C:\Qt\5.15.0\msvc2019\include\QtGui\qtouchdevice.h \
+		C:\Qt\5.15.0\msvc2019\include\QtWidgets\QApplication \
+		C:\Qt\5.15.0\msvc2019\include\QtWidgets\qapplication.h \
+		C:\Qt\5.15.0\msvc2019\include\QtCore\qcoreapplication.h \
+		C:\Qt\5.15.0\msvc2019\include\QtCore\qeventloop.h \
+		C:\Qt\5.15.0\msvc2019\include\QtWidgets\qdesktopwidget.h \
+		C:\Qt\5.15.0\msvc2019\include\QtGui\qguiapplication.h \
+		C:\Qt\5.15.0\msvc2019\include\QtGui\qinputmethod.h
 
 debug\graphicshelper.obj: ..\..\PublicationOrganizerQt\PublicationOrganizerQt\graphicshelper.cpp ..\..\PublicationOrganizerQt\PublicationOrganizerQt\graphicshelper.h \
 		C:\Qt\5.15.0\msvc2019\include\QtWidgets\QGraphicsDropShadowEffect \
@@ -1112,12 +1119,6 @@ debug\main.obj: ..\..\PublicationOrganizerQt\PublicationOrganizerQt\main.cpp ..\
 		..\..\PublicationOrganizerQt\PublicationOrganizerQt\publicationorganizerdialog.h \
 		C:\Qt\5.15.0\msvc2019\include\QtWidgets\QDialog \
 		C:\Qt\5.15.0\msvc2019\include\QtWidgets\qdialog.h \
-		..\..\PublicationOrganizerQt\PublicationOrganizerQt\databaseengine.h \
-		C:\Qt\5.15.0\msvc2019\include\QtSql\QSql \
-		C:\Qt\5.15.0\msvc2019\include\QtSql\qtsqlglobal.h \
-		C:\Qt\5.15.0\msvc2019\include\QtSql\qtsql-config.h \
-		C:\Qt\5.15.0\msvc2019\include\QtSql\QSqlDatabase \
-		C:\Qt\5.15.0\msvc2019\include\QtSql\qsqldatabase.h \
 		C:\Qt\5.15.0\msvc2019\include\QtWidgets\QApplication \
 		C:\Qt\5.15.0\msvc2019\include\QtWidgets\qapplication.h \
 		C:\Qt\5.15.0\msvc2019\include\QtCore\qcoreapplication.h \
@@ -1291,7 +1292,13 @@ debug\mainmenu.obj: ..\..\PublicationOrganizerQt\PublicationOrganizerQt\mainmenu
 		ui_mainmenu.h \
 		C:\Qt\5.15.0\msvc2019\include\QtQml\QQmlContext \
 		C:\Qt\5.15.0\msvc2019\include\QtQml\qqmlcontext.h \
-		C:\Qt\5.15.0\msvc2019\include\QtQml\qjsvalue.h
+		C:\Qt\5.15.0\msvc2019\include\QtQml\qjsvalue.h \
+		..\..\PublicationOrganizerQt\PublicationOrganizerQt\databaseengine.h \
+		C:\Qt\5.15.0\msvc2019\include\QtSql\QSql \
+		C:\Qt\5.15.0\msvc2019\include\QtSql\qtsqlglobal.h \
+		C:\Qt\5.15.0\msvc2019\include\QtSql\qtsql-config.h \
+		C:\Qt\5.15.0\msvc2019\include\QtSql\QSqlDatabase \
+		C:\Qt\5.15.0\msvc2019\include\QtSql\qsqldatabase.h
 
 debug\publicationorganizerdialog.obj: ..\..\PublicationOrganizerQt\PublicationOrganizerQt\publicationorganizerdialog.cpp ..\..\PublicationOrganizerQt\PublicationOrganizerQt\publicationorganizerdialog.h \
 		C:\Qt\5.15.0\msvc2019\include\QtWidgets\QDialog \

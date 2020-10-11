@@ -21,7 +21,9 @@ namespace PublicationOrganizerUI
             InitializeComponent();
             EventSubscriber();
             SetInitialPage();
-            CreateSplashDialog(); 
+            CreateSplashDialog();
+            MaxHeight = SystemParameters.VirtualScreenHeight - 10;
+            MaxWidth = SystemParameters.VirtualScreenWidth - 10; 
         }
 
         /// <summary>
@@ -117,7 +119,7 @@ namespace PublicationOrganizerUI
             DialogContentFrame.Content = null; 
         }
 
-        private async void WindowControlsContainer_MouseDown(object sender, MouseButtonEventArgs e)
+        private async void WindowControlsContainer_MouseDown_ASYNC(object sender, MouseButtonEventArgs e)
         {
             if(WindowState == WindowState.Maximized)
             {

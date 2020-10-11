@@ -39,6 +39,8 @@ private:
     void SetUpButton(QQuickWidget* buttonPtr, ButtonStyles style, QString text, qreal fontSize, bool transparency);
     void SetupGraphicsEffects();
     bool eventFilter(QObject *watched, QEvent *event);
+    void CreateDatabaseIfNoneExists();
+    void SetupDatagridWidget();
 
 };
 
