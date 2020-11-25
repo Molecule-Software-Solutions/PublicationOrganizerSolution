@@ -16,7 +16,7 @@ The purpose of this application is to provide an easy management facility for or
 * click the **Add New** button on the main control strip.
 * A panel will appear which allows you to enter information about the new publication
 * Enter *title*, *group*, *location*, *summary*, and *publication date*.
-* If a date range is desired, ckick the **Date Range** checkbox
+* If a date range is desired, click the **Date Range** checkbox
 * An additional date will appear which will allow you to enter the end of the date range
 * Click the **Add Record** button to save the record to the database.
 * *Clicking cancel will close the new publication entry without saving*
