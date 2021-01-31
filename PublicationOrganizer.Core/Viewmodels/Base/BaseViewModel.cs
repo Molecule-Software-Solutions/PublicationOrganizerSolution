@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel;
+using System.Runtime.CompilerServices;
 
 namespace PublicationOrganizer.Core
 {
@@ -15,5 +16,10 @@ namespace PublicationOrganizer.Core
         /// a developer will need to manually call property changed events. 
         /// </summary>
         public event PropertyChangedEventHandler PropertyChanged;
+
+        public void OnPropertyChanged([CallerMemberName]string propertyName = "")
+        {
+            PropertyChanged.Invoke(this, new PropertyChangedEventArgs(propertyName)); 
+        }
     }
 }
